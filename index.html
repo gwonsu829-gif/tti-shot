@@ -955,7 +955,7 @@ async function showResult(id, quiet) {
     : K === 'group' ? f.people.map(p => p.ttiName).join(' · ') : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`;
   const restWhat = { year: '열두 달 흐름, 좋은 달과 조심할 달, 올해 해 볼 일', group: '각자 맡은 자리, 짝마다 점수, 무리가 같이 해 볼 일', reunion: '앞으로 석 달의 흐름, 나를 위해 해 볼 일', match: '앞으로 석 달, 둘이 해 볼 일' }[K];
   const gate = r.locked ? `<section class="card gate pop" id="rv"><h2>여기까지 어땠어요?</h2><p>별점과 한 줄을 남기면 나머지 편지가 열려요.</p>
-      <p class="meta">남은 글 ${r.rest.length}편과 ${restWhat}, 사주 표가 기다리고 있어요.</p>
+      <p class="meta">남은 글 ${r.rest.length}편과 ${restWhat}이 기다리고 있어요.</p>
       <ol start="${o.sections.length + 1}">${r.rest.map(t => `<li>${esc(t)}</li>`).join('')}</ol>${starsBox('후기 남기고 나머지 열기')}</section>` : '';
   const todo = h => `<section class="card pop"><h2>${h}</h2><ol class="todo">${o.todo.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`;
   const months = h => `<section class="card pop"><h2>${h}</h2><ul class="rows">${o.months.map(m => `<li><b>${esc(m.when)}</b><div>${esc(m.text)}</div></li>`).join('')}</ul></section>`;
@@ -963,27 +963,27 @@ async function showResult(id, quiet) {
     <section class="card pop peach"><h2>${YEAR}년, 이런 해예요</h2><div class="yp"><b>${f.year.pillar}</b><p>${f.year.el} 기운의 ${f.year.ttiName} 해예요. ${names[0]}님에게는 <em>${f.year.god}</em>의 해이고, ${f.p.ttiName}와 ${f.year.ttiName}는 ${f.year.relName}예요.</p></div></section>
     <div class="gc pop"><section class="card sky"><h3>힘이 나는 달</h3><b>${esc(o.good.when)}</b><p>${esc(o.good.why)}</p></section><section class="card peach"><h3>조심할 달</h3><b>${esc(o.care.when)}</b><p>${esc(o.care.why)}</p></section></div>
     <section class="card pop"><h2>열두 달 한 줄씩</h2><ul class="rows">${o.months.map((m, i) => `<li><b>${esc(m.when)}</b><div>${esc(m.text)}${f.months[i] ? `<i>${f.months[i].pillar}월 · ${f.months[i].god}</i>` : ''}</div></li>`).join('')}</ul></section>
-    ${todo('올해 해 볼 일')}</section>
-    <section class="card pop"><h2>${names[0]}님의 사주</h2>${sajuTable(names[0], f.p)}${calcNote(f.p.cols.length < 4)}</section>`
+    ${todo('올해 해 볼 일')}</section>`
     : K === 'group' ? `
     <section class="card pop"><h2>각자 맡은 자리</h2><ul class="roles">${o.roles.map((x, i) => `<li>${f.people[i] ? `<img src="solo/${f.people[i].tti}.jpg" alt="" loading="lazy">` : '<span></span>'}<div><b>${esc(x.name)}</b><em>${esc(x.role)}</em><p>${esc(x.text)}</p></div></li>`).join('')}</ul></section>
     <section class="card pop"><h2>짝마다 점수</h2><ul class="rows">${f.pairs.map(p => `<li><b>${p.score}점</b><div>${names[p.i]} × ${names[p.j]}<i>${f.people[p.i].ttiName} × ${f.people[p.j].ttiName} · ${p.relName}</i></div></li>`).join('')}</ul></section>
-    ${todo('무리가 같이 해 볼 일')}</section>
-    <section class="card pop"><h2>모두의 사주</h2>${f.people.map((p, i) => sajuTable(names[i], p)).join('')}${calcNote(f.people.some(p => p.cols.length < 4))}</section>`
+    ${todo('무리가 같이 해 볼 일')}</section>`
     : K === 'reunion' ? `
     ${months('앞으로 석 달의 흐름')}
-    ${todo('나를 위해 해 볼 일')}</section>
-    <section class="card pop"><h2>두 사람의 사주</h2>${sajuTable(names[0], f.a)}${sajuTable(names[1], f.b)}${calcNote(f.a.cols.length < 4 || f.b.cols.length < 4)}</section>`
+    ${todo('나를 위해 해 볼 일')}</section>`
     : `
     ${months('앞으로 석 달')}
     ${todo('둘이 해 볼 일')}
-      <div class="lucky"><div><small>물건</small>${esc(o.lucky.item)}</div><div><small>색</small>${esc(o.lucky.color)}</div><div><small>숫자</small>${esc(o.lucky.number)}</div></div></section>
-    <section class="card pop"><h2>두 사람의 사주</h2>${sajuTable(names[0], f.a)}${sajuTable(names[1], f.b)}${calcNote(f.a.cols.length < 4 || f.b.cols.length < 4)}</section>`;
+      <div class="lucky"><div><small>물건</small>${esc(o.lucky.item)}</div><div><small>색</small>${esc(o.lucky.color)}</div><div><small>숫자</small>${esc(o.lucky.number)}</div></div></section>`;
   const after = r.locked ? '' : `
     ${r.reviewed ? '' : `<section class="card pop" id="rv"><h2>어땠어요?</h2><p>별점과 한 줄만 남겨 주세요. 다음 편지를 더 잘 쓰는 데 써요.</p>${starsBox()}</section>`}
     <section class="card pop peach"><h2>다 읽었다면</h2><p>보내거나, 스토리에 올릴 사진으로 저장해 보세요.</p>${tools(info.send)}
       <div class="duo"><a class="btn" href="#group">단체 궁합</a><a class="btn sky" href="#year">신년운세</a></div><a class="back" href="#" style="display:block;text-align:center;margin-top:12px">다른 궁합도 보기 →</a></section>`;
-  box.innerHTML = `${cover}
+  // 사주표: 결과지 맨 위 사진 바로 아래(11-15 사용자 요청 "사주풀이를 가장 위로"). 무료 결과지도 처음부터 보인다
+  const sajuCard = `<section class="card pop saju-card"><span class="tag">사주 여덟 글자</span><h2>${K === 'year' ? `${names[0]}님의 사주` : K === 'group' ? '모두의 사주' : '두 사람의 사주'}</h2>${
+    K === 'year' ? sajuTable(names[0], f.p) : K === 'group' ? f.people.map((p, i) => sajuTable(names[i], p)).join('') : sajuTable(names[0], f.a) + sajuTable(names[1], f.b)}${
+    calcNote(K === 'year' ? f.p.cols.length < 4 : K === 'group' ? f.people.some(p => p.cols.length < 4) : f.a.cols.length < 4 || f.b.cols.length < 4)}</section>`;
+  box.innerHTML = `${cover}${sajuCard}
     <section class="card pop" style="text-align:center"><h2>${esc(o.headline)}</h2><p class="meta">${meta}</p><p><span class="label">${esc(o.label)}</span></p><p>${esc(o.summary)}</p>${tools(info.send)}</section>
     ${envelope}${secs}${gate}${rest}${after}`;
   popAll(box);
