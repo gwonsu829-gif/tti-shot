@@ -11,7 +11,9 @@
 <meta name="description" content="띠 동물 사진 한 장과 나만을 위해 쓴 편지 같은 사주 풀이. 두 사람 궁합, 2027 신년운세.">
 <meta property="og:title" content="사진 한 장으로 받는 사주">
 <meta property="og:description" content="두 사람 궁합과 2027 신년운세를, 띠 동물 사진 한 장과 편지로 받아 보세요.">
-<meta property="og:image" content="pair/1-3.jpg">
+<meta property="og:image" content="https://gwonsu829-gif.github.io/tti-shot/pair/1-3.jpg"><!-- 카톡·인스타 미리보기는 전체 주소여야 사진을 찾는다 -->
+<meta property="og:url" content="https://gwonsu829-gif.github.io/tti-shot/">
+<meta property="og:type" content="website">
 <meta name="theme-color" content="#fff8ef">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,11 +71,11 @@ s { color: var(--soft); }
 .hero { text-align: center; padding-top: 4px; }
 .hero h1 { margin: 0; font-size: 31px; line-height: 1.3; }
 .hero p { color: var(--soft); margin: 6px 0 0; }
-.stack { position: relative; height: 350px; margin: 18px 0 6px; }
-.stack .pola { position: absolute; width: 56%; }
-.stack .pola:nth-child(1) { left: 0; top: 26px; --r: -9deg; }
-.stack .pola:nth-child(2) { right: 0; top: 0; --r: 7deg; }
-.stack .pola:nth-child(3) { left: 23%; top: 112px; --r: -1deg; }
+.stack { position: relative; height: 300px; margin: 16px 0 6px; }
+.stack .pola { position: absolute; width: 50%; }
+.stack .pola:nth-child(1) { left: 2%; top: 22px; --r: -9deg; }
+.stack .pola:nth-child(2) { right: 2%; top: 0; --r: 7deg; }
+.stack .pola:nth-child(3) { left: 25%; top: 84px; --r: -1deg; }
 .flash { position: fixed; inset: 0; z-index: 9; background: #fff; pointer-events: none; animation: flash .9s ease-out .25s both; }
 @keyframes flash { 0% { opacity: 0; } 12% { opacity: .95; } 100% { opacity: 0; visibility: hidden; } }
 .price { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 10px; margin: 10px 0 0; padding: 10px 14px; background: #fff; border-radius: 999px; box-shadow: var(--shadow); font-size: 15px; }
@@ -234,6 +236,94 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 20; pointer-event
 .shop dt { font: 14px var(--round); color: var(--peach-d); }
 .shop dd { margin: 2px 0 0; font-size: 14px; line-height: 1.5; }
 
+/* 오늘의 띠샷 */
+.chips { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 12px; }
+.chips button { padding: 9px 0; font-size: 15px; color: var(--ink); background: var(--bg); box-shadow: 0 3px 0 var(--line); }
+.chips button[aria-pressed=true] { color: #fff; background: var(--sky-d); box-shadow: 0 3px 0 #4f97cb; }
+.daily { margin-top: 16px; text-align: center; }
+.daily .pola { width: 74%; margin: 4px auto 14px; --r: 2deg; }
+.daily .line { font: 19px/1.5 var(--round); margin: 6px 0; }
+.lucky2 { display: flex; justify-content: center; gap: 8px; margin-top: 10px; }
+.lucky2 span { padding: 4px 12px; border-radius: 999px; background: var(--sky-l); font-size: 14px; }
+
+/* 신청서 위 약속 세 가지, 방금 본 사진 */
+#pricebig { display: contents; }
+.perks { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.perks span { padding: 3px 11px; border-radius: 999px; background: var(--pink-l, #fff0f4); border: 2px solid #fff; font: 13px/1.6 var(--round); color: #a8566b; box-shadow: 0 2px 6px rgba(242, 138, 166, .12); }
+.formphoto { width: 56%; margin: 18px auto 6px; --r: -3deg; }
+.formphoto figcaption { font-size: 17px; }
+/* 결과지 미리보기 */
+.sample-top { display: grid; grid-template-columns: 46% 1fr; gap: 14px; align-items: center; margin-top: 8px; }
+.sample-top .pola { --r: -4deg; }
+.sample-top .pola figcaption { font-size: 15px; padding: 3px 2px 7px; }
+.sticker.sm { position: static; display: inline-grid; width: 64px; height: 64px; font-size: 24px; border-width: 4px; margin-bottom: 6px; transform: rotate(8deg); }
+.sample-h { margin: 4px 0 8px; font: 18px/1.4 var(--round); }
+.sample-letter { margin: 18px 0 8px; padding-top: 24px; }
+.sample-letter p { -webkit-mask: linear-gradient(#000 55%, transparent); mask: linear-gradient(#000 55%, transparent); }
+/* 입금 안내 */
+.pay .amount { margin: 6px 0 4px; font: 40px/1.2 var(--round); color: var(--peach-d); }
+.pay .code { padding: 1px 8px; border-radius: 8px; background: var(--butter, #fff3c4); font-family: 'Courier New', monospace; letter-spacing: .08em; }
+.pay .acct { margin: 12px 0 0; padding: 12px 14px; border-radius: 18px; background: var(--bg); font: 18px/1.5 var(--round); }
+
+/* 저장용 이미지 크게 보기 */
+.saved { position: fixed; inset: 0; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 16px; background: rgba(43, 37, 35, .82); }
+.saved img { max-height: 70vh; max-width: 100%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, .4); -webkit-touch-callout: default; }
+.saved .hint { margin: 0; color: #fff8ef; font: 17px var(--round); }
+.saved .duo { width: 100%; max-width: 360px; margin: 0; }
+.saved .duo:has(> :only-child) { grid-template-columns: 1fr; }
+
+/* 남은 무료 자리 = 남은 필름 칸 */
+.frames { display: flex; flex-wrap: wrap; justify-content: center; gap: 3px; width: 100%; margin: 2px 0; }
+.frames i { width: 6px; height: 10px; border-radius: 2px; background: var(--peach-d); }
+.frames i.used { background: #eadbd2; }
+.filmleft { font-size: 14px; color: var(--soft); }
+#left { display: contents; }
+/* 띠 버튼에 그 띠 동물 얼굴 */
+.chips { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.chips button { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 0 6px; border-radius: 20px; font-size: 14px; }
+.chips img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 2px 6px rgba(120, 80, 60, .15); }
+/* 사진을 톡 치면 흔들 */
+.pola.wiggle { animation: wiggle .5s cubic-bezier(.34, 1.56, .64, 1); }
+@keyframes wiggle { 30% { transform: rotate(calc(var(--r, -3deg) + 4deg)) scale(1.04); } 65% { transform: rotate(calc(var(--r, -3deg) - 2deg)); } }
+/* 결과지 사진 캡션 옆 손그림 하트 */
+.photo figcaption::after { content: ''; display: inline-block; width: 22px; height: 20px; margin-left: 6px; vertical-align: -3px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 20C5 15 2 11 2.5 7.2 3 4 6.5 2.3 9 3.6c1.4.7 2.3 2 3 3.2.8-1.4 1.8-2.7 3.3-3.3 2.6-1 6 .8 6.2 4.1.3 3.9-3.3 7.6-9.5 12.4z' fill='none' stroke='%23ec8b69' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain; }
+/* 편지 봉투: 결과지 글 앞에 한 번 열고 들어간다 */
+.envelope { position: relative; overflow: hidden; padding: 128px 18px 22px; text-align: center; background: #fff1e8; perspective: 600px; }
+.envelope .flap { position: absolute; top: 0; left: 0; right: 0; height: 92px; background: #ffd8c6; clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform .6s cubic-bezier(.34, 1.3, .64, 1); }
+.envelope.opened .flap { transform: rotateX(180deg); }
+.envelope .seal { position: absolute; top: 62px; left: 50%; width: 58px; height: 58px; margin-left: -29px; border-radius: 50%; overflow: hidden; border: 4px solid var(--peach-d); box-shadow: 0 4px 10px rgba(236, 139, 105, .35); transition: opacity .3s; }
+.envelope.opened .seal { opacity: 0; }
+.envelope .seal img { width: 100%; height: 100%; object-fit: cover; }
+.envelope .to { margin-top: 12px !important; }
+.envelope button { margin-top: 12px; }
+/* 편지 첫 글자 */
+.letter > p:not(.to):not(.from)::first-letter { font: 30px/1 var(--round); color: var(--peach-d); }
+
+/* 더 찍어 보기: 작은 상품 줄 */
+.more { margin: 8px 0 0; padding: 0; list-style: none; }
+.more li + li { border-top: 2px dotted var(--line); }
+.more a { display: grid; grid-template-columns: 64px 1fr 20px; gap: 12px; align-items: center; padding: 12px 0; color: var(--ink); text-decoration: none; }
+.more img { width: 64px; height: 64px; object-fit: cover; border-radius: 14px; transform: rotate(-3deg); box-shadow: var(--shadow); }
+.more b { display: block; font: 400 18px var(--round); }
+.more span { font-size: 14px; color: var(--soft); line-height: 1.5; }
+.more i { font-style: normal; color: var(--peach-d); font-size: 20px; }
+
+/* 단체 사진: 각자 띠 동물을 한 장에 */
+.groupshot { display: grid; gap: 4px; background: #2b2523; border-radius: 2px; overflow: hidden; }
+.groupshot.n3 { grid-template-columns: repeat(3, 1fr); }
+.groupshot.n4 { grid-template-columns: repeat(2, 1fr); }
+.groupshot img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.groupshot.n3 img { aspect-ratio: 3 / 4; }
+.roles { margin: 8px 0 0; padding: 0; list-style: none; }
+.roles li { display: grid; grid-template-columns: 56px 1fr; gap: 12px; padding: 12px 0; border-top: 2px dotted var(--line); }
+.roles li:first-child { border-top: 0; }
+.roles img { width: 56px; height: 56px; object-fit: cover; border-radius: 50%; border: 3px solid #fff; box-shadow: var(--shadow); }
+.roles b { font: 400 17px var(--round); }
+.roles em { display: inline-block; margin-left: 6px; padding: 0 10px; border-radius: 999px; background: var(--peach-l); font: 13px/1.8 var(--round); }
+.roles p { margin: 2px 0 0; font-size: 15px; }
+.opt legend { color: var(--soft); }
+
 /* 셔터 카운트다운 */
 .dev-wrap { position: relative; }
 .count { position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; font: 84px/1 var(--round); color: var(--peach-d);
@@ -246,54 +336,177 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 20; pointer-event
 .stamp { display: block; width: 52px; padding: 4px; background: #fff; border-radius: 2px; box-shadow: 0 2px 6px rgba(120, 80, 60, .2); outline: 2px dashed #ecdcd2; outline-offset: -2px; transform: rotate(5deg); }
 .stamp:nth-child(2) { transform: rotate(-4deg); }
 .stamp img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.stamps.row { position: relative; top: auto; right: auto; justify-content: flex-end; margin: -6px 0 6px; }
+.stamps.row .postmark { left: auto; right: 150px; top: 6px; }
 .postmark { position: absolute; left: -30px; top: 34px; width: 66px; height: 66px; display: grid; place-content: center; text-align: center; border: 2px solid rgba(236, 139, 105, .6); border-radius: 50%;
   color: rgba(236, 139, 105, .85); font: 10px/1.35 var(--round); transform: rotate(-14deg); background: rgba(255, 253, 249, .25); }
 
+/* ---- 레퍼런스 반영(11-15): 인스탁스·폴라로이드의 "사진이 주인공", 진짜 인화지 같은 그림자, 브랜드 띠, 포토이즘식 여백 */
+/* 오행 다섯 색 띠 = 띠샷 표식(나무·불·흙·쇠·물). 머리 아래와 스토리 이미지에 같은 띠가 들어간다 */
+:root { --five: linear-gradient(90deg, #8fd3a0 0 20%, #ff9f95 20% 40%, #f6cf62 40% 60%, #c9ced9 60% 80%, #8cc3f2 80%); }
+.top { position: relative; padding-bottom: 14px; margin-bottom: 6px; }
+.top::after { content: ''; position: absolute; left: 2px; right: 2px; bottom: 0; height: 4px; border-radius: 4px; background: var(--five); }
+/* 인화지: 살짝 누런 종이 결과 겹 그림자 */
+.pola { background: linear-gradient(170deg, #fff 0%, #fbf7f1 100%);
+  box-shadow: 0 1px 1px rgba(80, 50, 40, .08), 0 6px 12px rgba(80, 50, 40, .08), 0 20px 36px rgba(80, 50, 40, .13); }
+/* 큰 제목과 형광펜 */
+.hero h1 { font-size: 34px; line-height: 1.25; letter-spacing: -.02em; }
+.mark { padding: 0 3px; background: linear-gradient(transparent 58%, rgba(255, 181, 154, .7) 58% 90%, transparent 90%); }
+/* 사진 뒤 스튜디오 조명 */
+.stack { isolation: isolate; }
+.stack::before { content: ''; position: absolute; inset: -20px -16px; z-index: -1; background: radial-gradient(closest-side, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0)); }
+/* 필름 가장자리 번호 */
+.card[data-shot] { position: relative; }
+.card[data-shot]::after { content: attr(data-shot); position: absolute; top: 22px; right: 20px; font: 700 12px/1 'Courier New', monospace; letter-spacing: .14em; color: #ffa04d; }
+/* 상품 카드: 큰 사진이 먼저, 글은 그 아래 */
+.product { display: flex; flex-direction: column; padding-top: 26px; }
+.product .pola { order: -1; width: 82%; margin: 0 auto 20px; padding: 10px 10px 0; }
+.product .pola::before { width: 84px; height: 24px; top: -11px; }
+.product .pola figcaption { font-size: 20px; padding: 6px 4px 10px; }
+.product .btn { margin-top: 16px; }
+
+/* ---- 몽글 테마(11-15): 처음 참고한 미니사주의 "말랑한 분홍빛 기분"만 가져온다. 화면 구성·그림·문구는 띠샷 것 그대로
+   사탕처럼 볼록한 카드와 버튼, 둥근 사진 틀, 떠다니는 비눗방울과 반짝이, 스티커 같은 제목 글씨 */
+:root { --pink: #ffc7d6; --pink-l: #fff0f4; --pink-d: #f28aa6; --lav: #e6dcff; --butter: #fff3c4;
+  --puff: inset 0 3px 0 rgba(255, 255, 255, .95), inset 0 -10px 18px rgba(255, 170, 190, .12), 0 14px 28px rgba(236, 139, 150, .16), 0 3px 6px rgba(236, 139, 150, .08); }
+body { background: linear-gradient(180deg, #fff6f1 0%, #fff0f5 45%, #f2f6ff 100%); }
+body::before { background: radial-gradient(42vmax 32vmax at 8% 6%, #ffe0d3, transparent 70%), radial-gradient(38vmax 30vmax at 96% 28%, #ffd9e6, transparent 70%), radial-gradient(44vmax 34vmax at 10% 72%, #e3efff, transparent 70%), radial-gradient(36vmax 28vmax at 92% 92%, #ece4ff, transparent 70%); }
+/* 떠다니는 비눗방울 */
+.bubbles { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.bubbles i { position: absolute; bottom: -80px; border-radius: 50%; background: radial-gradient(circle at 32% 30%, rgba(255, 255, 255, .95), rgba(255, 255, 255, .25) 42%, rgba(255, 199, 214, .18) 70%, rgba(255, 255, 255, 0) 72%);
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .7); animation: rise linear infinite; }
+@keyframes rise { to { transform: translateY(-120vh) translateX(var(--dx, 20px)); } }
+/* 볼록한 카드 */
+.card { border-radius: 34px; border: 3px solid rgba(255, 255, 255, .9); background: linear-gradient(180deg, #fff 0%, #fffafb 100%); box-shadow: var(--puff); }
+.card.peach { background: linear-gradient(180deg, #fff3ec 0%, #ffe7dc 100%); }
+.card.sky { background: linear-gradient(180deg, #f2f9ff 0%, #e4f1ff 100%); }
+.product:nth-of-type(odd) { background: linear-gradient(180deg, #fff 0%, var(--pink-l) 100%); }
+/* 사탕 버튼: 위쪽에 빛 한 줄, 누르면 말랑 */
+.btn, button { position: relative; overflow: hidden; background: linear-gradient(180deg, #ffa98c 0%, #f08566 100%); box-shadow: inset 0 -4px 0 rgba(190, 80, 50, .25), 0 6px 0 #d97557, 0 12px 20px rgba(236, 139, 105, .32); }
+.btn::before, button::before { content: ''; position: absolute; left: 12%; right: 12%; top: 5px; height: 38%; border-radius: 999px; background: linear-gradient(rgba(255, 255, 255, .55), rgba(255, 255, 255, 0)); pointer-events: none; }
+.btn.sky, button.sky { background: linear-gradient(180deg, #8fcaf2 0%, #5fa9de 100%); box-shadow: inset 0 -4px 0 rgba(40, 100, 160, .22), 0 6px 0 #4f97cb, 0 12px 20px rgba(111, 179, 227, .32); }
+.btn.ghost, button.ghost, .stars button, .chips button { background: #fff; }
+.btn.ghost::before, button.ghost::before, .stars button::before, .chips button::before { display: none; }
+/* 사진 틀: 모서리를 둥글게, 테이프 대신 사탕 같은 동그란 핀 */
+.pola { border-radius: 18px; padding: 11px 11px 0; }
+.pola img, .groupshot { border-radius: 12px; }
+.groupshot img { border-radius: 0; }
+.pola::before { width: 24px; height: 24px; top: -10px; border-radius: 50%; transform: translateX(-50%);
+  background: radial-gradient(circle at 35% 30%, #fff 0 14%, #ffc7d6 16%, #f28aa6 100%); box-shadow: 0 3px 6px rgba(242, 138, 166, .4); }
+.pola.blue::before { background: radial-gradient(circle at 35% 30%, #fff 0 14%, #cfe8ff 16%, #5fa9de 100%); box-shadow: 0 3px 6px rgba(111, 179, 227, .4); }
+.product .pola::before { width: 26px; height: 26px; top: -11px; }
+.zoo .pola { border-radius: 14px; } .zoo .pola img { border-radius: 9px; }
+/* 스티커 같은 제목: 하얀 테두리와 말랑한 그림자 */
+.hero h1 { color: #5a4039; -webkit-text-stroke: 7px #fff; paint-order: stroke fill; text-shadow: 0 6px 14px rgba(242, 138, 166, .28); }
+h2 { text-shadow: 0 2px 0 #fff; }
+.mark { background: linear-gradient(transparent 55%, rgba(255, 199, 214, .9) 55% 92%, transparent 92%); }
+/* 알약 꼬리표와 입력 칸도 말랑하게 */
+.tag { border: 2px solid #fff; box-shadow: 0 3px 8px rgba(242, 138, 166, .18); }
+.tag.p { background: linear-gradient(180deg, #ffb7c9, #f28aa6); }
+input, select, textarea { border-radius: 20px; border-color: #ffe1e8; background: #fffdfd; box-shadow: inset 0 2px 4px rgba(242, 138, 166, .06); }
+input:focus, select:focus, textarea:focus { border-color: var(--pink-d); box-shadow: 0 0 0 4px rgba(255, 199, 214, .45); }
+fieldset { border-radius: 26px; background: linear-gradient(180deg, #fff3ee, #ffeae2); box-shadow: inset 0 2px 0 #fff; }
+fieldset.b { background: linear-gradient(180deg, #f2f9ff, #e6f2ff); }
+.price { border: 3px solid #fff; box-shadow: var(--puff); }
+.sticker { border-width: 5px; background: radial-gradient(circle at 35% 30%, #ffc9b5, var(--peach-d)); }
+.sticker.sky { background: radial-gradient(circle at 35% 30%, #cfe8ff, var(--sky-d)); }
+/* 반짝이: 첫 화면 사진 더미 둘레에서 깜빡 */
+.spark { position: absolute; z-index: 5; width: var(--s, 18px); height: var(--s, 18px); pointer-events: none;
+  background: var(--c, #ffd36e); clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); animation: twinkle 2.4s ease-in-out infinite; }
+@keyframes twinkle { 50% { transform: scale(.55) rotate(20deg); opacity: .55; } }
+/* 첫 화면 사진들이 둥실 떠 있게 */
+.stack .pola { animation: bob 4.5s ease-in-out infinite; }
+.stack .pola:nth-child(2) { animation-delay: -1.5s; } .stack .pola:nth-child(3) { animation-delay: -3s; }
+@keyframes bob { 50% { translate: 0 -7px; } }
+/* 필름 진열장도 분홍 필름으로 */
+.film { background: linear-gradient(180deg, #ffd3df, #ffc2d2); }
+.film::before, .film::after { background: repeating-linear-gradient(90deg, transparent 0 7px, #fff 7px 17px, transparent 17px 24px); }
+.reel img { border-radius: 10px; }
+.reel figcaption { color: #8a4a5c; }
+.shop .sign { background: linear-gradient(180deg, #ffb7c9, #f28aa6); }
+.shop dl div { background: #fff; box-shadow: inset 0 2px 0 #fff, 0 4px 10px rgba(242, 138, 166, .1); }
+.envelope { background: linear-gradient(180deg, #fff3f6, #ffe6ee); }
+.envelope .flap { background: linear-gradient(180deg, #ffd0dd, #ffbfd0); }
+.letter { border-radius: 26px; }
+
 @media (prefers-reduced-motion: reduce) {
+  .bubbles, .spark { display: none; } .stack .pola { animation: none; }
   .js .pop { opacity: 1; transform: none; } .js .pop.in { animation: none; } .flash { display: none; }
   .develop img { transition: none; filter: none; } .btn, button { transition: none; }
   .reel, .rec b, .count { animation: none; }
 }
 </style>
+<div class="bubbles" aria-hidden="true"><i style="left:6%;width:46px;height:46px;animation-duration:19s;animation-delay:-3s"></i><i style="left:28%;width:24px;height:24px;animation-duration:15s;animation-delay:-9s;--dx:-30px"></i><i style="left:58%;width:58px;height:58px;animation-duration:24s;animation-delay:-14s"></i><i style="left:80%;width:30px;height:30px;animation-duration:17s;animation-delay:-6s;--dx:-24px"></i><i style="left:44%;width:18px;height:18px;animation-duration:13s;animation-delay:-11s"></i></div>
 <main>
   <header class="top"><a class="logo" href="#"><i aria-hidden="true"></i><span data-brand></span></a><small>재미로 보는 사주</small></header>
 
   <div id="home" hidden>
     <div class="flash" aria-hidden="true"></div>
     <section class="hero">
-      <h1>찰칵, 사주를<br>사진 한 장에 담아 드려요</h1>
-      <p>생년월일을 넣으면 우리 둘 띠 동물이<br>같이 찍힌 사진과, 둘만을 위한 편지가 와요.</p>
-      <div class="stack"><div class="finder" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="rec"><b></b>촬영 중</span></div><div id="stack" style="display:contents"></div></div>
-      <p class="price"><s>정가 1,900원</s> <b>오픈 기념 선착순 30명 무료</b> <span id="left"></span></p>
+      <h1>생일만 넣으면 끝,<br><span class="mark">띠 동물 사진</span>으로 보는 사주</h1>
+      <p>카메라로 찍는 게 아니에요. 생년월일만 넣으면<br>우리 띠 동물 사진과 풀이 편지가 와요.</p>
+      <div class="stack"><span class="spark" style="left:-2px;top:8px;--s:20px" aria-hidden="true"></span><span class="spark" style="right:6px;top:206px;--s:14px;--c:#ffb7c9;animation-delay:-.8s" aria-hidden="true"></span><span class="spark" style="left:20%;top:250px;--s:12px;--c:#9fd0f5;animation-delay:-1.6s" aria-hidden="true"></span><span class="spark" style="right:38%;top:-10px;--s:16px;--c:#ffb7c9;animation-delay:-1.1s" aria-hidden="true"></span><div class="finder" aria-hidden="true"><i></i><i></i><i></i><i></i></div><div id="stack" style="display:contents"></div></div>
+      <p class="price"><span id="pricebig"><s>정가 2,900원</s> <b>오픈 기념 선착순 30명 무료</b></span> <span id="left"></span></p>
     </section>
 
-    <section class="card pop" id="try">
-      <span class="tag p">미리 찍어 보기</span>
+    <section class="card pop" id="try" data-shot="SHOT 01">
+      <span class="tag p">무료 미리 보기</span>
       <h2>우리 둘은 어떤 사진이 나올까요</h2>
-      <p class="meta">태어난 해만 넣고 셔터를 눌러 보세요. 진짜 결과지에는 이 사진과 함께 두 사람만을 위한 편지가 와요.</p>
+      <p class="meta">태어난 해만 넣으면 우리 둘 띠 동물 사진이 바로 나와요. 결과지에는 이 사진과 두 사람만을 위한 풀이가 함께 와요.</p>
       <div class="two">
         <div><label for="ty1">내가 태어난 해</label><input id="ty1" type="number" inputmode="numeric" min="1930" max="2026" placeholder="1996"></div>
         <div><label for="ty2">상대가 태어난 해</label><input id="ty2" type="number" inputmode="numeric" min="1930" max="2026" placeholder="1995"></div>
       </div>
-      <button type="button" class="shutter" id="tshot"><i aria-hidden="true"></i>찰칵</button>
+      <button type="button" class="shutter" id="tshot"><i aria-hidden="true"></i>우리 사진 보기</button>
       <p class="err" id="terr" role="alert" hidden></p>
       <div class="tryout" id="tout" aria-live="polite"></div>
       <small>1월이나 2월 초에 태어났다면 띠가 앞 해일 수 있어요. 결과지에서는 생일로 정확히 다시 맞춰요.</small>
     </section>
 
-    <section class="card pop product">
-      <div><span class="tag p">두 사람</span><h2>우리 둘 궁합 사진</h2><p class="pricetag"><s>1,900원</s> <b>지금 0원</b></p></div>
-      <figure class="pola" style="--r:4deg"><img src="pair/2-9.jpg" alt="범과 닭이 함께 찍힌 사진" width="768" height="768"><figcaption>범 × 닭</figcaption></figure>
-      <ul><li>두 사람 띠가 함께 찍힌 사진과 궁합 점수</li><li>둘만을 위해 쓴 풀이 일곱 편</li><li>앞으로 석 달, 둘이 해 볼 일, 사주 표</li></ul>
-      <a class="btn" href="#match">궁합 사진 받기</a>
-      <a class="back" href="#k=27cb2130209964330a2ee1fb" style="grid-column:1/-1;text-align:center;margin-top:10px">결과지 예시 먼저 보기 →</a>
+    <section class="card pop peach" id="sample" hidden>
+      <span class="tag p">실제 결과지 미리보기</span>
+      <h2>이렇게 와요</h2>
+      <div id="sampleBody"></div>
+      <a class="btn ghost" id="sampleLink" href="#">예시 결과지 전부 보기</a>
     </section>
 
     <section class="card pop product">
-      <div><span class="tag">한 사람</span><h2>2027 신년운세</h2><p class="pricetag"><s>1,900원</s> <b>지금 0원</b></p></div>
+      <div><span class="tag p">두 사람</span><h2>우리 둘 궁합</h2><p class="pricetag" data-kind="match"><s>2,900원</s> <b>지금 0원</b></p></div>
+      <figure class="pola" style="--r:4deg"><img src="pair/2-9.jpg" alt="범과 닭이 함께 찍힌 사진" width="768" height="768"><figcaption>범 × 닭</figcaption></figure>
+      <ul><li>두 사람 띠가 함께 찍힌 사진과 궁합 점수</li><li>둘만을 위해 쓴 풀이 일곱 편</li><li>앞으로 석 달, 둘이 해 볼 일, 사주 표</li></ul>
+      <a class="btn" href="#match">궁합 보기</a>
+      <a class="back" href="#k=27cb2130209964330a2ee1fb" style="align-self:center;margin-top:12px">결과지 예시 먼저 보기 →</a>
+    </section>
+
+    <section class="card pop product">
+      <div><span class="tag">한 사람</span><h2>2027 신년운세</h2><p class="pricetag" data-kind="year"><s>2,900원</s> <b>지금 0원</b></p></div>
       <figure class="pola blue" style="--r:-4deg"><img src="solo/7.jpg" alt="고깔모자를 쓴 아기 양 사진" width="768" height="768"><figcaption>2027 양띠 해</figcaption></figure>
       <ul><li>내 띠 동물 사진 한 장</li><li>한 해 총평과 일·돈·사람·몸과 마음</li><li>열두 달 한 줄씩, 좋은 달과 조심할 달</li><li>올해 제일 궁금한 것에 대한 답</li></ul>
       <a class="btn sky" href="#year">신년운세 받기</a>
+    </section>
+
+    <section class="card pop product">
+      <div><span class="tag p">3~4명</span><h2>친구들 단체 궁합</h2><p class="pricetag" data-kind="group"><s>2,900원</s> <b>지금 0원</b></p></div>
+      <figure class="pola" style="--r:3deg"><span class="groupshot n4"><img src="solo/2.jpg" alt=""><img src="solo/9.jpg" alt=""><img src="solo/7.jpg" alt=""><img src="solo/10.jpg" alt=""></span><figcaption>우리 넷</figcaption></figure>
+      <ul><li>친구들 띠 동물이 다 같이 찍힌 단체 사진</li><li>각자 이 무리에서 맡은 자리</li><li>제일 잘 맞는 짝, 부딪히는 짝과 푸는 법</li></ul>
+      <a class="btn" href="#group">단체 궁합 보기</a>
+    </section>
+
+    <section class="card pop">
+      <h2>이런 것도 볼 수 있어요</h2>
+      <ul class="more">
+        <li><a href="#reunion"><img src="pair/3-8.jpg" alt=""><div><b>재회운</b><span>멀어진 그 사람과 나, 다시 닿을 수 있을까</span></div><i aria-hidden="true">›</i></a></li>
+        <li><a href="#family"><img src="pair/1-11.jpg" alt=""><div><b>엄마랑 나, 가족 궁합</b><span>아끼는데 자꾸 서운한 이유와 표현하는 법</span></div><i aria-hidden="true">›</i></a></li>
+        <li><a href="#bff"><img src="pair/0-4.jpg" alt=""><div><b>단짝 친구 궁합</b><span>우리 우정이 오래가는 법</span></div><i aria-hidden="true">›</i></a></li>
+      </ul>
+    </section>
+
+    <section class="card pop sky" id="today" data-shot="SHOT 02">
+      <span class="tag">무료 · 매일 바뀌어요</span>
+      <h2>오늘의 띠샷</h2>
+      <p class="meta">내 띠를 누르면 오늘의 띠 동물과 같이 찍힌 사진 한 장과 오늘의 한 줄이 나와요.</p>
+      <div class="chips" id="chips"></div>
+      <div class="daily" id="daily" aria-live="polite"></div>
     </section>
 
     <h2 class="film-title pop">진열장에 걸린 사진들</h2>
@@ -308,7 +521,7 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 20; pointer-event
 
     <section class="card pop peach">
       <h2>이렇게 받아요</h2>
-      <ul class="todo"><li>생년월일과 궁금한 것 한 가지를 적어요.</li><li>1분쯤 사진이 현상되는 동안 풀이를 써요.</li><li>앞의 두 편을 읽고 한 줄 후기를 남기면 나머지가 열려요.</li></ul>
+      <ul class="todo"><li>생년월일과 궁금한 것 한 가지를 적어요.</li><li>1분쯤 기다리면 띠 동물 사진과 풀이가 함께 와요.</li><li>앞의 두 편을 읽고 한 줄 후기를 남기면 나머지가 열려요.</li></ul>
       <small>받은 링크로 언제든 다시 볼 수 있어요. 재미로 보는 풀이예요.</small>
     </section>
 
@@ -322,37 +535,37 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 20; pointer-event
       </dl>
     </section>
     <p class="foot"><span data-brand></span> · 문의와 삭제 요청은 인스타 DM으로</p>
-    <div class="cta"><div class="duo"><a class="btn" href="#match">궁합 사진</a><a class="btn sky" href="#year">2027 신년운세</a></div></div>
+    <div class="cta"><div class="duo"><a class="btn" href="#match">궁합 보기</a><a class="btn sky" href="#year">2027 신년운세</a></div></div>
   </div>
 
   <div id="match" hidden>
     <a class="back" href="#">← 처음으로</a>
     <form class="card" id="mform">
-      <span class="tag p">두 사람 · 무료 체험</span>
-      <h2>우리 둘 궁합 사진</h2>
+      <span class="tag p" id="mtag">두 사람 · 무료 체험</span>
+      <h2 id="mtitle">우리 둘 궁합</h2>
       <p class="meta">두 사람 띠가 같이 찍힌 사진과, 둘만을 위해 쓴 풀이를 보내 드려요.</p>
+      <div id="mphoto"></div>
+      <p class="perks"><span>1분이면 와요</span><span class="perk-price">무료 체험</span><span>링크로 언제든 다시</span></p>
       <fieldset><legend>나</legend>
         <label for="an">이름 또는 별명</label><input id="an" maxlength="10" required autocomplete="off">
         <div class="two">
-          <div><label for="ad">생년월일(양력)</label><input type="date" id="ad" required></div>
+          <div><label for="ad">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="ad" required></div>
           <div><label for="at">태어난 시간(선택)</label><input type="time" id="at"></div>
         </div>
       </fieldset>
-      <fieldset class="b"><legend>상대</legend>
+      <fieldset class="b"><legend id="mbleg">상대</legend>
         <label for="bn">이름 또는 별명</label><input id="bn" maxlength="10" required autocomplete="off">
         <div class="two">
-          <div><label for="bd">생년월일(양력)</label><input type="date" id="bd" required></div>
+          <div><label for="bd">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="bd" required></div>
           <div><label for="bt">태어난 시간(선택)</label><input type="time" id="bt"></div>
         </div>
       </fieldset>
       <label for="stage">두 사람은 지금</label>
-      <select id="stage" required>
-        <option value="">골라 주세요</option><option>썸</option><option>연애 초반</option><option>오래된 연인</option><option>부부</option><option>친구·동료</option>
-      </select>
+      <select id="stage" required></select>
       <label for="mq">제일 궁금한 것 한 가지(안 적어도 돼요)</label>
       <textarea id="mq" rows="3" maxlength="200" placeholder="예: 자꾸 연락 문제로 다투는데 왜 그럴까요"></textarea>
       <label class="chk"><input type="checkbox" id="magree" required><span class="consent"></span></label>
-      <button id="msend">궁합 사진 찍기</button>
+      <button id="msend">궁합 결과지 받기</button>
       <p class="err" id="merr" role="alert" hidden></p>
       <div id="mwait" hidden></div>
     </form>
@@ -364,26 +577,95 @@ body::after { content: ''; position: fixed; inset: 0; z-index: 20; pointer-event
       <span class="tag">한 사람 · 무료 체험</span>
       <h2>2027 신년운세</h2>
       <p class="meta">내 띠 동물 사진 한 장과, 2027년 한 해를 미리 읽어 주는 편지를 보내 드려요.</p>
+      <p class="perks"><span>1분이면 와요</span><span class="perk-price">무료 체험</span><span>링크로 언제든 다시</span></p>
       <fieldset><legend>나</legend>
         <label for="yn">이름 또는 별명</label><input id="yn" maxlength="10" required autocomplete="off">
         <div class="two">
-          <div><label for="yd">생년월일(양력)</label><input type="date" id="yd" required></div>
+          <div><label for="yd">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="yd" required></div>
           <div><label for="yt">태어난 시간(선택)</label><input type="time" id="yt"></div>
         </div>
       </fieldset>
       <label for="yq">올해 제일 궁금한 것 한 가지</label>
       <textarea id="yq" rows="3" maxlength="200" required placeholder="예: 내년에 이직해도 괜찮을까요"></textarea>
       <label class="chk"><input type="checkbox" id="yagree" required><span class="consent"></span></label>
-      <button class="sky" id="ysend">신년운세 사진 찍기</button>
+      <button class="sky" id="ysend">신년운세 결과지 받기</button>
       <p class="err" id="yerr" role="alert" hidden></p>
       <div id="ywait" hidden></div>
     </form>
+  </div>
+
+  <div id="group" hidden>
+    <a class="back" href="#">← 처음으로</a>
+    <form class="card" id="gform">
+      <span class="tag p">3~4명 · 무료 체험</span>
+      <h2>친구들 단체 궁합</h2>
+      <p class="meta">친구들 띠 동물이 다 같이 찍힌 단체 사진과, 단톡방에 돌려 읽을 편지를 보내 드려요. 세 명은 꼭, 넷째는 있으면 적어 주세요.</p>
+      <p class="perks"><span>1분이면 와요</span><span class="perk-price">무료 체험</span><span>링크로 언제든 다시</span></p>
+      <div id="gpeople"></div>
+      <label for="gq">무리에게 궁금한 것 한 가지(안 적어도 돼요)</label>
+      <textarea id="gq" rows="3" maxlength="200" placeholder="예: 여행 가면 왜 꼭 한 명이 삐질까요"></textarea>
+      <label class="chk"><input type="checkbox" id="gagree" required><span class="consent"></span></label>
+      <button id="gsend">단체 궁합 결과지 받기</button>
+      <p class="err" id="gerr" role="alert" hidden></p>
+      <div id="gwait" hidden></div>
+    </form>
+  </div>
+
+  <div id="reunion" hidden>
+    <a class="back" href="#">← 처음으로</a>
+    <form class="card" id="rform">
+      <span class="tag">두 사람 · 무료 체험</span>
+      <h2>재회운</h2>
+      <p class="meta">멀어진 두 사람이 같이 찍힌 사진과, 마음을 정리하도록 돕는 편지를 보내 드려요. 된다, 안 된다로 잘라 말하지 않고 흐름으로 읽어 드려요.</p>
+      <p class="perks"><span>1분이면 와요</span><span class="perk-price">무료 체험</span><span>링크로 언제든 다시</span></p>
+      <fieldset><legend>나</legend>
+        <label for="ran">이름 또는 별명</label><input id="ran" maxlength="10" required autocomplete="off">
+        <div class="two">
+          <div><label for="rad">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="rad" required></div>
+          <div><label for="rat">태어난 시간(선택)</label><input type="time" id="rat"></div>
+        </div>
+      </fieldset>
+      <fieldset class="b"><legend>그 사람</legend>
+        <label for="rbn">이름 또는 별명</label><input id="rbn" maxlength="10" required autocomplete="off">
+        <div class="two">
+          <div><label for="rbd">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="rbd" required></div>
+          <div><label for="rbt">태어난 시간(선택)</label><input type="time" id="rbt"></div>
+        </div>
+      </fieldset>
+      <label for="since">멀어진 지</label>
+      <select id="since" required><option value="">골라 주세요</option><option>한 달이 안 됐어요</option><option>1~6개월</option><option>6개월~1년</option><option>1년이 넘었어요</option></select>
+      <label for="rq">제일 궁금한 것 한 가지(안 적어도 돼요)</label>
+      <textarea id="rq" rows="3" maxlength="200" placeholder="예: 먼저 연락해 봐도 될까요"></textarea>
+      <label class="chk"><input type="checkbox" id="uagree" required><span class="consent"></span></label>
+      <button class="sky" id="usend">재회운 결과지 받기</button>
+      <p class="err" id="uerr" role="alert" hidden></p>
+      <div id="uwait" hidden></div>
+    </form>
+  </div>
+
+  <div id="admin" hidden>
+    <section class="card">
+      <h2>입금 확인</h2>
+      <p class="meta">운영자 화면이에요. 관리 열쇠를 넣으면 입금 대기 주문이 보여요. 입금자명의 코드와 금액을 통장에서 확인한 뒤 눌러 주세요. 누르면 AI가 편지를 써요(1분쯤, 약 200원).</p>
+      <label for="akey">관리 열쇠</label><input id="akey" type="password" autocomplete="off">
+      <button type="button" id="aload" style="margin-top:12px">주문 불러오기</button>
+      <p class="err" id="aerr" role="alert" hidden></p>
+      <div id="alist"></div>
+    </section>
   </div>
 
   <div id="result" hidden></div>
 </main>
 <script>
 const BRAND = '띠샷';   // 서비스 이름(11-15 확정). 바꿀 땐 여기 한 곳만
+const HANDLE = '@tti.shot';   // 인스타 아이디. 스토리 이미지 맨 아래에 찍힌다. 계정을 만들면 실제 아이디와 같은지 확인
+// 입금 받을 곳. 사용자가 직접 채운다(손님 입금 안내 화면에 그대로 나온다). 비어 있으면 "인스타 DM으로 문의" 안내가 나온다
+//   bank: 은행 이름, account: 계좌번호, holder: 받는 사람 이름 (toss.me 송금 링크는 서비스가 끝나 11-15에 버튼을 뺐다. toss 칸은 쓰지 않는다)
+const PAY = { bank: '토스뱅크', account: '1000-2034-7672', holder: '김권수', toss: '' };
+let PRICE = { match: 2900, year: 2900, reunion: 2900, group: 4900 }, FREE_LEFT = null;   // 실제 값은 서버(/api/left)에서 받는다
+const won = n => Number(n).toLocaleString('ko-KR') + '원';
+const ymd = v => { const d = String(v).replace(/\D/g, ''); return d.length === 8 ? `${d.slice(0, 4)}-${d.slice(4, 6)}-${d.slice(6)}` : String(v); };   // 19960302 → 1996-03-02
+const LIVE = 'https://flash-saju-api.ugauga-village.workers.dev', EXAMPLE_ID = '27cb2130209964330a2ee1fb';   // 예시 결과지는 내 컴퓨터에서도 실제 서버에서 읽는다
 const API = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? 'http://localhost:8788' : 'https://flash-saju-api.ugauga-village.workers.dev';
 const FULL = ['쥐', '소', '범', '토끼', '용', '뱀', '말', '양', '원숭이', '닭', '개', '돼지'];
 const EL = ['나무', '불', '흙', '쇠', '물'], ELC = ['#c6ebcb', '#ffcdc8', '#ffe6a8', '#e4e7ef', '#c4e0ff'], ELB = ['#7fcf8c', '#ff9a8f', '#f2c64f', '#b9c0cf', '#79b5f0'];
@@ -404,7 +686,28 @@ const stampDate = () => { const d = kst(), p = n => String(n).padStart(2, '0'); 
 const shot = (src, alt, date) => `<span class="shot"><img src="${src}" alt="${alt}" width="768" height="768" loading="lazy" onerror="this.style.visibility='hidden'">${date ? `<time>${stampDate()}</time>` : ''}</span>`;
 const pola = (src, alt, cap, cls = '', date = false) => `<figure class="pola ${cls}">${shot(src, alt, date)}<figcaption>${cap}</figcaption></figure>`;
 const pairOf = (a, b) => Math.min(a, b) + '-' + Math.max(a, b);   // pair/작은번호-큰번호.jpg (0 쥐 … 11 돼지), solo/번호.jpg
-const flash = () => { const d = document.createElement('div'); d.className = 'flash now'; d.setAttribute('aria-hidden', 'true'); document.body.append(d); setTimeout(() => d.remove(), 1200); };
+// 셔터 소리: 파일 없이 짧은 잡음 두 번(찰-칵)을 만들어 낸다. 소리 장치는 첫 터치 때 만들어야 휴대폰이 막지 않는다
+let ac = null;
+addEventListener('pointerdown', () => { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); ac.resume(); } catch (e) {} }, { passive: true });
+function click() {
+  if (!ac || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  [0, .07].forEach((at, k) => {
+    const n = ac.sampleRate * .045, b = ac.createBuffer(1, n, ac.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / n) ** 3;
+    const s = ac.createBufferSource(), g = ac.createGain(); s.buffer = b; g.gain.value = k ? .22 : .12;
+    s.connect(g).connect(ac.destination); s.start(ac.currentTime + at);
+  });
+}
+const flash = () => {
+  const d = document.createElement('div'); d.className = 'flash now'; d.setAttribute('aria-hidden', 'true'); document.body.append(d); setTimeout(() => d.remove(), 1200);
+  click(); navigator.vibrate?.(30);
+};
+// 사진(폴라로이드)을 톡 치면 살짝 흔들린다. 링크 안 사진은 그대로 넘어가게 둔다
+document.addEventListener('click', e => {
+  const p = e.target.closest('.pola'); if (!p || e.target.closest('a')) return;
+  p.classList.remove('wiggle'); void p.offsetWidth; p.classList.add('wiggle');
+});
+document.addEventListener('animationend', e => e.target.classList?.remove('wiggle'));
 const REL = { hap6: ['짝꿍 띠', '옛날부터 짝으로 묶어 온 사이예요.'], hap3: ['한편 띠', '같은 편으로 묶이는 사이예요.'], same: ['같은 띠', '말 안 해도 통하고, 고집도 닮았어요.'],
   plain: ['무난한 띠', '둘이 하기 나름인 사이예요.'], wonjin: ['티격태격 띠', '좋아하는데 자꾸 말이 엇나가는 사이예요.'], chung: ['맞수 띠', '끌리는 힘도, 부딪히는 힘도 커요.'] };
 const WONJIN = new Set(['0-7', '1-6', '2-9', '3-8', '4-11', '5-10']);
@@ -418,25 +721,83 @@ const seen = 'IntersectionObserver' in window ? new IntersectionObserver(es => e
 const popAll = root => root.querySelectorAll('.pop:not(.in)').forEach(el => seen ? seen.observe(el) : el.classList.add('in'));
 
 // ---- 첫 화면
-$('stack').innerHTML = [[1, 3], [7, 10], [0, 6]].map(([a, b]) => pola(`pair/${a}-${b}.jpg`, `${FULL[a]}와 ${FULL[b]}가 함께 찍힌 사진`, `${FULL[a]} × ${FULL[b]}`)).join('');
+// 릴스마다 링크 끝에 ?p=작은번호-큰번호(예: ?p=1-3)를 붙이면 영상 속 그 사진이 첫 화면 맨 앞에 나온다
+const STACK = [[1, 3], [7, 10], [0, 6]];
+{ const m = /^(\d{1,2})-(\d{1,2})$/.exec(new URLSearchParams(location.search).get('p') || ''), a = +m?.[1], b = +m?.[2];
+  if (m && a <= b && b < 12) STACK[2] = [a, b]; }   // 세 번째 사진이 가운데 맨 앞이다
+$('stack').innerHTML = STACK.map(([a, b]) => pola(`pair/${a}-${b}.jpg`, `${FULL[a]}와 ${FULL[b]}가 함께 찍힌 사진`, `${FULL[a]} × ${FULL[b]}`)).join('');
 $('zoo').innerHTML = FULL.map((n, i) => pola(`solo/${i}.jpg`, `아기 ${n} 사진`, n)).join('');
+
+// ---- 오늘의 띠샷(무료, 서버·AI 없이). 오늘의 일진 동물과 내 띠의 관계로 한 줄을 고른다. 한국 날짜 기준이라 하루 동안 같다
+// 일진 계산은 서버 saju.mjs와 같은 식: 일지 = (율리우스일 + 1) % 12, 일간 = (율리우스일 + 9) % 10
+const DAY = {
+  hap6: ['오늘 만나는 사람과 말이 잘 붙어요. 미뤄 둔 부탁을 꺼내 보세요.', '작은 호의가 크게 돌아오는 날이에요. 먼저 커피 한 잔 사 보세요.', '혼자보다 둘이 할 때 일이 빨리 끝나요.', '오늘 고른 건 대체로 맞아요. 너무 오래 고민하지 마세요.'],
+  hap3: ['같은 편이 생기는 날이에요. 단톡방에 먼저 말을 걸어 보세요.', '하던 일에 속도가 붙어요. 오전에 제일 어려운 것부터 하세요.', '칭찬을 들으면 그냥 고맙다고 받아 두세요. 오늘은 그게 맞아요.', '모임이 있다면 가는 쪽이 좋아요.'],
+  same: ['나랑 닮은 사람을 만나기 쉬운 날이에요. 고집 대결은 피하세요.', '익숙한 길이 편한 날이에요. 새로운 건 내일로 미뤄도 괜찮아요.', '내 방식대로 해도 되는 날이에요. 다만 한 번만 설명해 주세요.', '평소 하던 대로만 해도 하루가 무난하게 흘러가요.'],
+  plain: ['크게 좋지도 나쁘지도 않은 날이라 밀린 일 하기 좋아요.', '오늘은 계획대로가 제일 좋아요.', '작은 정리 하나가 기분을 바꿔요. 책상 위부터 치워 보세요.', '연락 하나만 먼저 해 두면 저녁이 편해져요.'],
+  wonjin: ['말이 엇나가기 쉬운 날이에요. 중요한 얘기는 글로 한 번 다듬어 보내세요.', '괜히 서운해지기 쉬워요. 배고플 땐 결정을 미루세요.', '오늘 들은 한마디를 오래 곱씹지 마세요.', '약속 시간을 넉넉하게 잡으면 하루가 덜 꼬여요.'],
+  chung: ['움직임이 많은 날이에요. 지갑과 휴대폰을 한 번 더 챙기세요.', '부딪히는 일이 생겨도 오늘 안에 결론 내지 않아도 돼요.', '급하게 사고 싶은 게 생기면 장바구니에만 넣어 두세요.', '산책이나 운동으로 힘을 조금 빼 두면 밤이 편해요.'],
+};
+const COLORS = ['복숭아색', '하늘색', '연두색', '크림색', '라벤더색', '민트색', '코랄색', '버터 노랑'];
+const hash = s => { let h = 2166136261; for (const c of s) h = Math.imul(h ^ c.codePointAt(0), 16777619); return h >>> 0; };
+function daily(t) {
+  const d = kst(), key = d.toISOString().slice(0, 10), jdn = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) / 864e5 + 2440588;
+  const db = (jdn + 1) % 12, ds = (jdn + 9) % 10, r = rel(t, db), h = hash(key + t), line = DAY[r][h % DAY[r].length];
+  [...$('chips').children].forEach((b, k) => b.setAttribute('aria-pressed', k === t));
+  $('daily').innerHTML = `${pola(`pair/${pairOf(t, db)}.jpg`, `${FULL[t]}와 ${FULL[db]}가 함께 찍힌 사진`, `${FULL[t]}띠 × 오늘(${FULL[db]}날)`, 'develop quick', true)}
+    <p class="meta">오늘은 ${'갑을병정무기경신임계'[ds]}${'자축인묘진사오미신유술해'[db]}일, ${FULL[db]}의 날이에요. ${FULL[t]}띠와는 ${REL[r][0]}예요.</p>
+    <p class="line">${line}</p>
+    <div class="lucky2"><span>행운 색 ${COLORS[(h >>> 3) % COLORS.length]}</span><span>행운 숫자 ${(h >>> 7) % 9 + 1}</span></div>
+    <small>2027년 한 해가 궁금하면 <a href="#year">신년운세</a>에서 열두 달을 다 봐 드려요.</small>`;
+  requestAnimationFrame(() => requestAnimationFrame(() => $('daily').querySelector('.develop').classList.add('go')));
+  try { localStorage.setItem('tti', t); } catch (e) {}
+}
+$('chips').innerHTML = FULL.map((n, i) => `<button type="button" aria-pressed="false" aria-label="${n}띠"><img src="solo/${i}.jpg" alt="" loading="lazy">${n}</button>`).join('');
+$('chips').onclick = e => { const i = [...$('chips').children].indexOf(e.target.closest('button')); if (i >= 0) daily(i); };
+try { const s = localStorage.getItem('tti'); if (s !== null && FULL[+s]) daily(+s); } catch (e) {}
 // 진열장: 78장 중 12장을 골라 두 번 이어 붙여 끊김 없이 흐르게 한다
 const REEL = [[2, 9], [1, 3], [4, 8], [3, 7], [5, 9], [0, 6], [6, 10], [8, 11], [2, 4], [7, 10], [1, 5], [9, 11]];
 $('reel').innerHTML = [...REEL, ...REEL].map(([a, b]) => `<figure><img src="pair/${a}-${b}.jpg" alt="" width="112" height="112" loading="lazy"><figcaption>${FULL[a]} × ${FULL[b]}</figcaption></figure>`).join('');
 
 // ---- 미리 찍어 보기: 태어난 해 두 개로 띠 사진만 바로 보여 준다(서버·AI 없이)
+let lastTry = null;
 $('tshot').onclick = () => {
   const ys = ['ty1', 'ty2'].map(id => +$(id).value), ok = ys.every(y => y >= 1930 && y <= 2026);
   $('terr').hidden = ok;
   if (!ok) { $('terr').textContent = '태어난 해를 네 자리로 넣어 주세요. 예: 1996'; return; }
   const [A, B] = ys.map(y => ((y - 4) % 12 + 12) % 12), r = REL[rel(A, B)];
+  lastTry = { ys, A, B };   // 궁합 신청서로 넘어가면 태어난 해와 이 사진을 이어 준다
   flash();
   $('tout').innerHTML = `${pola(`pair/${pairOf(A, B)}.jpg`, `${FULL[A]}와 ${FULL[B]}가 함께 찍힌 사진`, `${FULL[A]}띠 × ${FULL[B]}띠`, 'develop quick', true)}
     <p><span class="rel">${r[0]}</span></p><p>${r[1]}</p><p class="meta">점수와 둘만의 이야기는 생일까지 넣으면 편지로 써 드려요.</p><a class="btn" href="#match">이 사진으로 궁합 받기</a>`;
   requestAnimationFrame(() => requestAnimationFrame(() => $('tout').querySelector('.develop').classList.add('go')));
   $('tout').scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
-api('/api/left').then(j => { $('left').textContent = `남은 자리 ${j.left}명`; }).catch(() => {});
+// 남은 무료 자리와 가격: 무료가 남았으면 "정가 → 0원", 다 찼으면 가격을 그대로 보여 주고 신청 버튼에도 금액을 붙인다
+const KIND_OF = { m: 'match', y: 'year', g: 'group', u: 'reunion' };
+function showPrices() {
+  const free = FREE_LEFT === null || FREE_LEFT > 0;
+  document.querySelectorAll('.pricetag[data-kind]').forEach(e => { const p = won(PRICE[e.dataset.kind]); e.innerHTML = free ? `<s>${p}</s> <b>지금 0원</b>` : `<b>${p}</b>`; });
+  $('pricebig').innerHTML = free ? `<s>정가 ${won(PRICE.match)}</s> <b>오픈 기념 선착순 무료</b>` : `<b>무료 체험이 끝났어요 · ${won(PRICE.match)}부터</b>`;
+  document.querySelectorAll('.perk-price').forEach(e => { const k = { m: 'match', y: 'year', g: 'group', r: 'reunion' }[e.closest('form').id[0]]; e.textContent = free ? '무료 · 후기 남기면 전부 열려요' : won(PRICE[k]); });
+  for (const [k, kind] of Object.entries(KIND_OF)) { const b = $(k + 'send'); b.dataset.label ??= b.textContent; b.textContent = free ? b.dataset.label : `${b.dataset.label} · ${won(PRICE[kind])}`; }
+}
+api('/api/left').then(j => {   // 남은 무료 자리를 필름 칸으로: 쓴 칸은 흐리게
+  FREE_LEFT = j.left; if (j.price) PRICE = j.price;
+  $('left').innerHTML = j.left > 0 ? `<span class="frames" aria-hidden="true">${Array.from({ length: j.total }, (_, i) => `<i${i >= j.left ? ' class="used"' : ''}></i>`).join('')}</span><span class="filmleft">남은 무료 필름 ${j.left}/${j.total}장</span>` : '';
+  showPrices();
+}).catch(() => {});
+showPrices();
+
+// 결과지 미리보기: 실제 AI가 쓴 예시 결과지에서 사진·점수·첫 문단만 잘라 보여 준다
+fetch(`${LIVE}/api/result/${EXAMPLE_ID}`).then(r => r.ok ? r.json() : Promise.reject()).then(r => {
+  const f = r.facts, o = r.out, first = o.sections[0].body.split('\n')[0];
+  $('sampleBody').innerHTML = `<div class="sample-top">${pola(`pair/${f.pair}.jpg`, `${FULL[f.a.tti]}와 ${FULL[f.b.tti]}가 함께 찍힌 사진`, `${esc(r.names[0])} × ${esc(r.names[1])}`)}
+    <div><span class="sticker sm">${f.score}<span>점</span></span><p class="sample-h">${esc(o.headline)}</p><span class="label">${esc(o.label)}</span></div></div>
+    <div class="card letter sample-letter"><span class="no">1번째 장 · ${esc(o.sections[0].title)}</span><p>${esc(first.length > 130 ? first.slice(0, 130) + '…' : first)}</p></div>
+    <p class="meta" style="text-align:center">편지 ${o.sections.length}장 · 앞으로 석 달 · 둘이 해 볼 일 · 사주표까지</p>`;
+  $('sampleLink').href = '#k=' + EXAMPLE_ID; $('sample').hidden = false;
+}).catch(() => {});
 popAll(document);
 
 // 띠는 입춘 기준이지만, 기다리는 동안 보여 줄 사진에만 쓰므로 2월 4일로 고정해 대충 고른다(결과지 사진은 서버 계산을 쓴다)
@@ -447,13 +808,13 @@ function tti(s) {
 }
 
 // ---- 신청: 사진이 현상되는 동안 기다린다
-async function apply(k, body, photo, alt) {
+async function apply(k, body, frame) {   // frame = 현상될 사진 HTML(폴라로이드), 띠를 못 구하면 false
   const send = $(k + 'send'), err = $(k + 'err'), box = $(k + 'wait');
   const waits = ['사주 여덟 글자를 세우는 중이에요.', '오행을 세고 있어요.', '사진을 현상하면서 편지를 쓰는 중이에요. 1분쯤 걸려요.', '거의 다 썼어요. 창을 닫지 말고 기다려 주세요.'];
   let n = 0;
   err.hidden = true; send.disabled = true; box.hidden = false;
   const req = api('/api/result', { ...body, agree: $(k + 'agree').checked });   // 셔터 연출과 상관없이 바로 보낸다
-  box.innerHTML = `<div class="dev-wrap">${photo ? pola(photo, alt, '현상 중…', 'develop', true) : ''}<span class="count" aria-hidden="true">3</span></div><p class="wait" aria-live="polite"></p>`;
+  box.innerHTML = `<div class="dev-wrap">${frame || ''}<span class="count" aria-hidden="true">3</span></div><p class="wait" aria-live="polite"></p>`;
   const say = () => { box.querySelector('.wait').textContent = waits[Math.min(n++, waits.length - 1)]; };
   say(); const timer = setInterval(say, 9000);
   box.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -467,16 +828,48 @@ async function apply(k, body, photo, alt) {
     err.textContent = e.message === 'Failed to fetch' ? '서버에 닿지 못했어요. 잠시 뒤 다시 눌러 주세요.' : e.message; err.hidden = false;
   } finally { clearInterval(timer); box.hidden = true; send.disabled = false; }
 }
+// 궁합 폼은 입구가 셋(연인·가족·단짝)이다. 같은 폼에 제목·관계 고르기만 바꿔 끼운다
+const MODES = {
+  match: { tag: '두 사람 · 무료 체험', title: '우리 둘 궁합', who: '상대', ask: '두 사람은 지금', stages: ['썸', '연애 초반', '오래된 연인', '부부', '친구·동료'], q: '예: 자꾸 연락 문제로 다투는데 왜 그럴까요' },
+  family: { tag: '가족 · 무료 체험', title: '엄마랑 나, 가족 궁합', who: '가족', ask: '어떤 가족인가요', stages: ['엄마·아빠와 나', '형제자매'], q: '예: 엄마랑 얘기만 하면 왜 자꾸 언성이 높아질까요' },
+  bff: { tag: '단짝 · 무료 체험', title: '단짝 친구 궁합', who: '단짝', ask: '두 사람은', stages: ['단짝 친구'], q: '예: 우리 우정, 10년 뒤에도 괜찮을까요' },
+};
+let mode = '';
+function setMode(m) {
+  if (m === mode) return; mode = m;
+  const M = MODES[m];
+  $('mtag').textContent = M.tag; $('mtitle').textContent = M.title; $('mbleg').textContent = M.who; $('mq').placeholder = M.q;
+  document.querySelector('label[for=stage]').textContent = M.ask;
+  $('stage').innerHTML = (M.stages.length > 1 ? '<option value="">골라 주세요</option>' : '') + M.stages.map(s => `<option>${s}</option>`).join('');
+}
+// 띠 사진 묶음(단체샷): 사람 수에 맞춰 3칸 또는 2×2
+const groupFig = (ttis, cap, cls = '', date = false) => `<figure class="pola ${cls}"><span class="shot"><span class="groupshot n${ttis.length > 3 ? 4 : 3}">${ttis.map(t => `<img src="solo/${t}.jpg" alt="아기 ${FULL[t]} 사진" loading="lazy">`).join('')}</span>${date ? `<time>${stampDate()}</time>` : ''}</span><figcaption>${cap}</figcaption></figure>`;
+$('gpeople').innerHTML = ['첫째', '둘째', '셋째', '넷째(있으면)'].map((l, i) => `<fieldset class="${i % 2 ? 'b' : ''} ${i === 3 ? 'opt' : ''}"><legend>${l}</legend>
+  <label for="g${i}n">이름 또는 별명</label><input id="g${i}n" maxlength="10" autocomplete="off"${i < 3 ? ' required' : ''}>
+  <div class="two"><div><label for="g${i}d">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="g${i}d"${i < 3 ? ' required' : ''}></div><div><label for="g${i}t">태어난 시간(선택)</label><input type="time" id="g${i}t"></div></div></fieldset>`).join('');
+
 $('mform').onsubmit = e => {
   e.preventDefault();
-  const A = tti($('ad').value), B = tti($('bd').value);
-  apply('m', { kind: 'match', a: { name: $('an').value, date: $('ad').value, time: $('at').value }, b: { name: $('bn').value, date: $('bd').value, time: $('bt').value }, stage: $('stage').value, q: $('mq').value },
-    A !== null && B !== null && `pair/${pairOf(A, B)}.jpg`, A !== null && B !== null ? `${FULL[A]}와 ${FULL[B]}가 함께 찍힌 사진` : '');
+  const A = tti(ymd($('ad').value)), B = tti(ymd($('bd').value));
+  apply('m', { kind: 'match', a: { name: $('an').value, date: ymd($('ad').value), time: $('at').value }, b: { name: $('bn').value, date: ymd($('bd').value), time: $('bt').value }, stage: $('stage').value, q: $('mq').value },
+    A !== null && B !== null && pola(`pair/${pairOf(A, B)}.jpg`, `${FULL[A]}와 ${FULL[B]}가 함께 찍힌 사진`, '현상 중…', 'develop', true));
 };
 $('yform').onsubmit = e => {
   e.preventDefault();
-  const A = tti($('yd').value);
-  apply('y', { kind: 'year', a: { name: $('yn').value, date: $('yd').value, time: $('yt').value }, q: $('yq').value }, A !== null && `solo/${A}.jpg`, A !== null ? `아기 ${FULL[A]} 사진` : '');
+  const A = tti(ymd($('yd').value));
+  apply('y', { kind: 'year', a: { name: $('yn').value, date: ymd($('yd').value), time: $('yt').value }, q: $('yq').value }, A !== null && pola(`solo/${A}.jpg`, `아기 ${FULL[A]} 사진`, '현상 중…', 'develop', true));
+};
+$('gform').onsubmit = e => {
+  e.preventDefault();
+  const people = [0, 1, 2, 3].map(i => ({ name: $(`g${i}n`).value, date: ymd($(`g${i}d`).value), time: $(`g${i}t`).value })).filter((p, i) => i < 3 || p.name || p.date);
+  const ts = people.map(p => tti(p.date));
+  apply('g', { kind: 'group', people, q: $('gq').value }, ts.every(t => t !== null) && groupFig(ts, '현상 중…', 'develop', true));
+};
+$('rform').onsubmit = e => {
+  e.preventDefault();
+  const A = tti(ymd($('rad').value)), B = tti(ymd($('rbd').value));
+  apply('u', { kind: 'reunion', a: { name: $('ran').value, date: ymd($('rad').value), time: $('rat').value }, b: { name: $('rbn').value, date: ymd($('rbd').value), time: $('rbt').value }, since: $('since').value, q: $('rq').value },
+    A !== null && B !== null && pola(`pair/${pairOf(A, B)}.jpg`, `${FULL[A]}와 ${FULL[B]}가 함께 찍힌 사진`, '현상 중…', 'develop', true));
 };
 
 // ---- 결과지 그리기. 이름과 글은 사람이 적었거나 AI가 쓴 것이라 전부 esc()를 거친다.
@@ -493,43 +886,98 @@ const starsBox = (btn = '후기 남기기') => `<div class="stars" id="stars">${
 const tools = (who) => `<div class="duo"><button type="button" class="ghost share">${who}</button><button type="button" class="ghost card-save">이미지로 저장</button></div>`;
 const calcNote = cols => `<small>글자 위아래 작은 글씨는 태어난 날을 기준으로 본 관계(십성)예요. 색은 오행이에요: 나무 초록, 불 분홍, 흙 노랑, 쇠 회색, 물 파랑.</small>
   <small>재미로 보는 풀이예요. 달은 절기 기준으로 바꾸고, 시간 보정 없이 한국 시각 그대로 계산했어요.${cols ? ' 태어난 시간을 모르면 시주를 빼고 봤어요.' : ''}</small>`;
+const FAMILY = ['엄마·아빠와 나', '형제자매'];
+// 상품마다 다른 이름표: 결과지 제목, 보내기 버튼, 저장 파일 이름
+function kindInfo(r) {
+  if (r.kind === 'year') return { title: `${YEAR} 신년운세`, send: '친구에게 보내기', file: 'tti-shot-2027' };
+  if (r.kind === 'group') return { title: '우리 무리 단체샷', send: '단톡방에 보내기', file: 'tti-shot-group' };
+  if (r.kind === 'reunion') return { title: '재회운', send: '친구에게 보내기', file: 'tti-shot-reunion' };
+  if (FAMILY.includes(r.stage)) return { title: '가족 궁합 사진', send: '가족에게 보내기', file: 'tti-shot-family' };
+  if (r.stage === '단짝 친구') return { title: '단짝 궁합 사진', send: '단짝에게 보내기', file: 'tti-shot-bff' };
+  return { title: '우리 둘 궁합 사진', send: '상대에게 보내기', file: 'tti-shot-gunghap' };
+}
+const ttisOf = r => r.kind === 'year' ? [r.facts.p.tti] : r.kind === 'group' ? r.facts.people.map(p => p.tti) : [r.facts.a.tti, r.facts.b.tti];
+
+// 결과지 맨 위 사진(점수·해 스티커, 날짜 도장). 입금 대기 화면도 같은 사진을 쓴다
+function coverOf(r, names) {
+  const f = r.facts, K = r.kind, day = today();
+  return K === 'year' ? `<div class="photo pola blue"><span class="sticker sky">${YEAR}<span>${f.year.pillar}년</span></span>${shot(`solo/${f.p.tti}.jpg`, `아기 ${FULL[f.p.tti]} 사진`, true)}<figcaption>${names[0]} · ${f.p.ttiName} · ${day}</figcaption></div>`
+    : K === 'group' ? groupFig(ttisOf(r), `${names.join(' · ')} · ${day}`, 'photo', true)
+    : `<div class="photo pola${K === 'reunion' ? ' blue' : ''}">${K === 'match' ? `<span class="sticker">${f.score}<span>점</span></span>` : ''}${shot(`pair/${f.pair}.jpg`, `${FULL[f.a.tti]}와 ${FULL[f.b.tti]}가 함께 찍힌 사진`, true)}<figcaption>${names[0]} × ${names[1]} · ${day}</figcaption></div>`;
+}
+// 유료 주문: 입금 안내(pay) 또는 입금 확인 뒤 쓰는 중(writing). 20초마다 다시 물어봐서 편지가 생기면 저절로 바뀐다
+const copyBtn = (text, label) => `<button type="button" class="ghost copy" data-copy="${esc(text)}">${label}</button>`;
+function waitingView(r, id, names) {
+  const box = $('result'), info = kindInfo(r), hasPay = PAY.account || PAY.toss;
+  box.innerHTML = r.waiting === 'pay' ? `${coverOf(r, names)}
+    <section class="card pop pay"><span class="tag p">${info.title}</span><h2>보내 주시면 바로 써 드려요</h2>
+      <p class="amount">${won(r.amount)}</p>
+      <ol class="todo"><li>입금자명에 주문 코드 <b class="code">${r.code}</b>를 꼭 적어 주세요.</li><li>입금이 확인되면 이 화면에서 편지가 열려요. 이 링크를 저장해 두세요.</li></ol>
+      ${PAY.account ? `<p class="acct">${esc(PAY.bank)} ${esc(PAY.account)}<br><small>받는 사람 ${esc(PAY.holder)}</small></p>` : ''}
+      <div class="duo">${copyBtn(r.code, '주문 코드 복사')}${PAY.account ? copyBtn(PAY.account, '계좌번호 복사') : copyBtn(location.href, '이 링크 복사')}</div>
+      ${hasPay ? '' : `<p class="err">입금 받을 곳을 준비하고 있어요. 인스타 DM으로 주문 코드를 보내 주시면 안내해 드려요.</p>`}
+      <small>확인은 사람이 직접 해서 조금 걸릴 수 있어요. 확인되면 1분 안에 편지가 와요.</small></section>`
+    : `${coverOf(r, names)}<section class="card pop" style="text-align:center"><h2>입금이 확인됐어요</h2><p>지금 두 사람만을 위한 편지를 쓰고 있어요. 1분쯤 걸려요.</p></section>`;
+  popAll(box);
+  box.querySelectorAll('.copy').forEach(b => b.onclick = () => navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.textContent = '복사했어요'; }, () => {}));
+  setTimeout(() => { if (location.hash === '#k=' + id) showResult(id, true); }, r.waiting === 'pay' ? 20000 : 8000);
+}
 
 async function showResult(id, quiet) {
   const box = $('result');
   if (!/^[0-9a-f]{24}$/.test(id)) return box.innerHTML = '<section class="card"><p class="err">링크가 잘못됐어요. 받은 링크를 그대로 다시 열어 주세요.</p></section>';
   if (!quiet) box.innerHTML = '<section class="card wait"><p>결과지를 펼치는 중이에요.</p></section>';
   let r; try { r = await api('/api/result/' + id); } catch (e) { return box.innerHTML = `<section class="card"><p class="err">${esc(e.message === 'Failed to fetch' ? '서버에 닿지 못했어요. 잠시 뒤 다시 열어 주세요.' : e.message)}</p></section>`; }
-  const names = r.names.map(esc), f = r.facts, o = r.out, isYear = r.kind === 'year';
-  const toLine = isYear ? `${names[0]}님께` : `${names[0]}님과 ${names[1]}님께`;
-  const ttis = isYear ? [f.p.tti] : [f.a.tti, f.b.tti];   // 첫 장 귀퉁이에 띠 동물 우표를 붙이고 사진관 소인을 찍는다
-  const stamps = `<span class="stamps" aria-hidden="true">${ttis.map(t => `<span class="stamp"><img src="solo/${t}.jpg" alt="" loading="lazy"></span>`).join('')}<span class="postmark">${esc(BRAND)}<br>${today()}</span></span>`;
-  const secs = o.sections.map((s, i) => `<section class="card letter pop${i === 0 ? ' first' : ''}"><span class="no">${i + 1}번째 장</span>${i === 0 ? `${stamps}<p class="to">${toLine}</p>` : ''}<h2>${esc(s.title)}</h2><p>${esc(s.body)}</p>${!r.locked && i === o.sections.length - 1 ? `<p class="from">${esc(BRAND)}에서</p>` : ''}</section>`).join('');
-  const cover = isYear
-    ? `<div class="photo pola blue"><span class="sticker sky">${YEAR}<span>${f.year.pillar}년</span></span>${shot(`solo/${f.p.tti}.jpg`, `아기 ${FULL[f.p.tti]} 사진`, true)}<figcaption>${names[0]} · ${f.p.ttiName} · ${today()}</figcaption></div>`
-    : `<div class="photo pola"><span class="sticker">${f.score}<span>점</span></span>${shot(`pair/${f.pair}.jpg`, `${FULL[f.a.tti]}와 ${FULL[f.b.tti]}가 함께 찍힌 사진`, true)}<figcaption>${names[0]} × ${names[1]} · ${today()}</figcaption></div>`;
-  const meta = isYear ? `${f.p.ttiName} · ${YEAR}년은 ${f.year.pillar}년(${f.year.ttiName}) · 내 띠와 ${f.year.relName}` : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`;
+  const names = r.names.map(esc), f = r.facts, o = r.out, K = r.kind, info = kindInfo(r), ttis = ttisOf(r);
+  if (r.waiting) return waitingView(r, id, names);
+  const toLine = K === 'group' ? names.map(n => n + '님').join(', ') + '께' : K === 'match' ? `${names[0]}님과 ${names[1]}님께` : `${names[0]}님께`;
+  // 첫 장 귀퉁이에 띠 동물 우표를 붙이고 사진관 소인을 찍는다. 세 장 이상이면 제목 위 한 줄로
+  const stamps = `<span class="stamps${ttis.length > 2 ? ' row' : ''}" aria-hidden="true">${ttis.map(t => `<span class="stamp"><img src="solo/${t}.jpg" alt="" loading="lazy"></span>`).join('')}<span class="postmark">${esc(BRAND)}<br>${today()}</span></span>`;
+  const secs = o.sections.map((s, i) => `<section class="card letter pop${i === 0 ? ' first' + (ttis.length > 2 ? ' many' : '') : ''}"><span class="no">${i + 1}번째 장</span>${i === 0 ? `${stamps}<p class="to">${toLine}</p>` : ''}<h2>${esc(s.title)}</h2><p>${esc(s.body)}</p>${!r.locked && i === o.sections.length - 1 ? `<p class="from">${esc(BRAND)}에서</p>` : ''}</section>`).join('');
+  const day = today(), total = o.sections.length + (r.rest?.length || 0);
+  const envelope = `<section class="card envelope pop"><span class="flap" aria-hidden="true"></span><span class="seal" aria-hidden="true"><img src="solo/${ttis[0]}.jpg" alt=""></span>
+    <p class="to">${toLine}</p><p class="meta">사진 뒤에 편지 ${total}장이 들어 있어요</p><button type="button" class="ghost open-letter">편지 열기</button></section>`;
+  const cover = coverOf(r, names);
+  const meta = K === 'year' ? `${f.p.ttiName} · ${YEAR}년은 ${f.year.pillar}년(${f.year.ttiName}) · 내 띠와 ${f.year.relName}`
+    : K === 'group' ? f.people.map(p => p.ttiName).join(' · ') : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`;
+  const restWhat = { year: '열두 달 흐름, 좋은 달과 조심할 달, 올해 해 볼 일', group: '각자 맡은 자리, 짝마다 점수, 무리가 같이 해 볼 일', reunion: '앞으로 석 달의 흐름, 나를 위해 해 볼 일', match: '앞으로 석 달, 둘이 해 볼 일' }[K];
   const gate = r.locked ? `<section class="card gate pop" id="rv"><h2>여기까지 어땠어요?</h2><p>별점과 한 줄을 남기면 나머지 편지가 열려요.</p>
-      <p class="meta">남은 글 ${r.rest.length}편과 ${isYear ? '열두 달 흐름, 좋은 달과 조심할 달, 올해 해 볼 일' : '앞으로 석 달, 둘이 해 볼 일'}, 사주 표가 기다리고 있어요.</p>
+      <p class="meta">남은 글 ${r.rest.length}편과 ${restWhat}, 사주 표가 기다리고 있어요.</p>
       <ol start="${o.sections.length + 1}">${r.rest.map(t => `<li>${esc(t)}</li>`).join('')}</ol>${starsBox('후기 남기고 나머지 열기')}</section>` : '';
-  const rest = r.locked ? '' : isYear ? `
+  const todo = h => `<section class="card pop"><h2>${h}</h2><ol class="todo">${o.todo.map(t => `<li>${esc(t)}</li>`).join('')}</ol>`;
+  const months = h => `<section class="card pop"><h2>${h}</h2><ul class="rows">${o.months.map(m => `<li><b>${esc(m.when)}</b><div>${esc(m.text)}</div></li>`).join('')}</ul></section>`;
+  const rest = r.locked ? '' : K === 'year' ? `
     <section class="card pop peach"><h2>${YEAR}년, 이런 해예요</h2><div class="yp"><b>${f.year.pillar}</b><p>${f.year.el} 기운의 ${f.year.ttiName} 해예요. ${names[0]}님에게는 <em>${f.year.god}</em>의 해이고, ${f.p.ttiName}와 ${f.year.ttiName}는 ${f.year.relName}예요.</p></div></section>
     <div class="gc pop"><section class="card sky"><h3>힘이 나는 달</h3><b>${esc(o.good.when)}</b><p>${esc(o.good.why)}</p></section><section class="card peach"><h3>조심할 달</h3><b>${esc(o.care.when)}</b><p>${esc(o.care.why)}</p></section></div>
     <section class="card pop"><h2>열두 달 한 줄씩</h2><ul class="rows">${o.months.map((m, i) => `<li><b>${esc(m.when)}</b><div>${esc(m.text)}${f.months[i] ? `<i>${f.months[i].pillar}월 · ${f.months[i].god}</i>` : ''}</div></li>`).join('')}</ul></section>
-    <section class="card pop"><h2>올해 해 볼 일</h2><ol class="todo">${o.todo.map(t => `<li>${esc(t)}</li>`).join('')}</ol></section>
+    ${todo('올해 해 볼 일')}</section>
     <section class="card pop"><h2>${names[0]}님의 사주</h2>${sajuTable(names[0], f.p)}${calcNote(f.p.cols.length < 4)}</section>`
+    : K === 'group' ? `
+    <section class="card pop"><h2>각자 맡은 자리</h2><ul class="roles">${o.roles.map((x, i) => `<li>${f.people[i] ? `<img src="solo/${f.people[i].tti}.jpg" alt="" loading="lazy">` : '<span></span>'}<div><b>${esc(x.name)}</b><em>${esc(x.role)}</em><p>${esc(x.text)}</p></div></li>`).join('')}</ul></section>
+    <section class="card pop"><h2>짝마다 점수</h2><ul class="rows">${f.pairs.map(p => `<li><b>${p.score}점</b><div>${names[p.i]} × ${names[p.j]}<i>${f.people[p.i].ttiName} × ${f.people[p.j].ttiName} · ${p.relName}</i></div></li>`).join('')}</ul></section>
+    ${todo('무리가 같이 해 볼 일')}</section>
+    <section class="card pop"><h2>모두의 사주</h2>${f.people.map((p, i) => sajuTable(names[i], p)).join('')}${calcNote(f.people.some(p => p.cols.length < 4))}</section>`
+    : K === 'reunion' ? `
+    ${months('앞으로 석 달의 흐름')}
+    ${todo('나를 위해 해 볼 일')}</section>
+    <section class="card pop"><h2>두 사람의 사주</h2>${sajuTable(names[0], f.a)}${sajuTable(names[1], f.b)}${calcNote(f.a.cols.length < 4 || f.b.cols.length < 4)}</section>`
     : `
-    <section class="card pop"><h2>앞으로 석 달</h2><ul class="rows">${o.months.map(m => `<li><b>${esc(m.when)}</b><div>${esc(m.text)}</div></li>`).join('')}</ul></section>
-    <section class="card pop"><h2>둘이 해 볼 일</h2><ol class="todo">${o.todo.map(t => `<li>${esc(t)}</li>`).join('')}</ol>
+    ${months('앞으로 석 달')}
+    ${todo('둘이 해 볼 일')}
       <div class="lucky"><div><small>물건</small>${esc(o.lucky.item)}</div><div><small>색</small>${esc(o.lucky.color)}</div><div><small>숫자</small>${esc(o.lucky.number)}</div></div></section>
     <section class="card pop"><h2>두 사람의 사주</h2>${sajuTable(names[0], f.a)}${sajuTable(names[1], f.b)}${calcNote(f.a.cols.length < 4 || f.b.cols.length < 4)}</section>`;
   const after = r.locked ? '' : `
     ${r.reviewed ? '' : `<section class="card pop" id="rv"><h2>어땠어요?</h2><p>별점과 한 줄만 남겨 주세요. 다음 편지를 더 잘 쓰는 데 써요.</p>${starsBox()}</section>`}
-    <section class="card pop peach"><h2>다 읽었다면</h2><p>${isYear ? '친구에게 보내거나' : '상대에게 보내거나'}, 스토리에 올릴 사진으로 저장해 보세요.</p>${tools(isYear ? '친구에게 보내기' : '상대에게 보내기')}
-      <div class="duo"><a class="btn" href="#match">궁합 사진</a><a class="btn sky" href="#year">신년운세</a></div></section>`;
+    <section class="card pop peach"><h2>다 읽었다면</h2><p>보내거나, 스토리에 올릴 사진으로 저장해 보세요.</p>${tools(info.send)}
+      <div class="duo"><a class="btn" href="#group">단체 궁합</a><a class="btn sky" href="#year">신년운세</a></div><a class="back" href="#" style="display:block;text-align:center;margin-top:12px">다른 궁합도 보기 →</a></section>`;
   box.innerHTML = `${cover}
-    <section class="card pop" style="text-align:center"><h2>${esc(o.headline)}</h2><p class="meta">${meta}</p><p><span class="label">${esc(o.label)}</span></p><p>${esc(o.summary)}</p>${tools(isYear ? '친구에게 보내기' : '상대에게 보내기')}</section>
-    ${secs}${gate}${rest}${after}`;
+    <section class="card pop" style="text-align:center"><h2>${esc(o.headline)}</h2><p class="meta">${meta}</p><p><span class="label">${esc(o.label)}</span></p><p>${esc(o.summary)}</p>${tools(info.send)}</section>
+    ${envelope}${secs}${gate}${rest}${after}`;
   popAll(box);
+  box.querySelector('.open-letter').onclick = e => {   // 봉투 뚜껑이 열리고 첫 장으로 내려간다
+    e.currentTarget.closest('.envelope').classList.add('opened');
+    setTimeout(() => box.querySelector('.letter')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 450);
+  };
   box.querySelectorAll('.share').forEach(b => b.onclick = () => share(r, b));
   box.querySelectorAll('.card-save').forEach(b => b.onclick = () => card(r, b));
   if (!$('stars')) return;
@@ -548,8 +996,9 @@ async function showResult(id, quiet) {
 
 // ---- 공유: 휴대폰 공유 창, 안 되면 링크 복사
 function share(r, btn) {
-  const url = location.href, text = r.kind === 'year' ? `${r.names[0]}님의 ${YEAR} 신년운세, ${BRAND}` : `${r.names[0]} × ${r.names[1]} 궁합 ${r.facts.score}점, ${BRAND}`;
-  if (navigator.share) return navigator.share({ title: BRAND, text, url }).catch(() => {});
+  const n = r.names, url = location.href;
+  const text = r.kind === 'year' ? `${n[0]}님의 ${YEAR} 신년운세` : r.kind === 'group' ? `${n.join(', ')} 우리 무리 단체샷` : r.kind === 'reunion' ? `${n[0]}님의 재회운` : `${n[0]} × ${n[1]} ${kindInfo(r).title.replace(' 사진', '')} ${r.facts.score}점`;
+  if (navigator.share) return navigator.share({ title: BRAND, text: `${text}, ${BRAND}`, url }).catch(() => {});
   navigator.clipboard?.writeText(url).then(() => { btn.textContent = '링크를 복사했어요'; }, () => {});
 }
 // ---- 이미지로 저장: 인스타 스토리 크기(1080×1920) 한 장. 크림 바탕에 기울어진 폴라로이드. 캔버스 글자는 HTML이 아니라 esc()가 필요 없다
@@ -558,47 +1007,105 @@ function lines(g, s, max) {
   for (const w of s.split(' ')) { const t = out[out.length - 1] ? out[out.length - 1] + ' ' + w : w; if (g.measureText(t).width > max && out[out.length - 1]) out.push(w); else out[out.length - 1] = t; }
   return out.slice(0, 2);
 }
+function cover(g, img, x, y, w, h) {   // 사진을 칸에 꽉 차게 가운데를 잘라 넣는다
+  if (!img.naturalWidth) return;
+  const s = Math.max(w / img.naturalWidth, h / img.naturalHeight), sw = w / s, sh = h / s;
+  g.drawImage(img, (img.naturalWidth - sw) / 2, (img.naturalHeight - sh) / 2, sw, sh, x, y, w, h);
+}
 async function card(r, btn) {
   btn.disabled = true;
   try {
-    const f = r.facts, isYear = r.kind === 'year', c = document.createElement('canvas'), g = c.getContext('2d'), img = new Image();
-    c.width = 1080; c.height = 1920; img.src = isYear ? `solo/${f.p.tti}.jpg` : `pair/${f.pair}.jpg`;
-    await Promise.all([document.fonts.load('60px Jua'), document.fonts.load('700 60px Gaegu'), img.decode()].map(p => p.catch(() => {})));
-    const peach = '#ec8b69', ink = '#4b3b36', soft = '#8c7a73';
+    const f = r.facts, K = r.kind, info = kindInfo(r), c = document.createElement('canvas'), g = c.getContext('2d');
+    const srcs = K === 'year' ? [`solo/${f.p.tti}.jpg`] : K === 'group' ? f.people.map(p => `solo/${p.tti}.jpg`) : [`pair/${f.pair}.jpg`];
+    const imgs = srcs.map(s => Object.assign(new Image(), { src: s }));
+    c.width = 1080; c.height = 1920;
+    await Promise.all([document.fonts.load('60px Jua'), document.fonts.load('700 60px Gaegu'), ...imgs.map(i => i.decode())].map(p => p.catch(() => {})));
+    const peach = '#ec8b69', ink = '#4b3b36', soft = '#8c7a73', blue = K === 'year' || K === 'reunion';
     g.fillStyle = '#fff8ef'; g.fillRect(0, 0, 1080, 1920);
     const b1 = g.createRadialGradient(0, 0, 0, 0, 0, 900); b1.addColorStop(0, '#ffe7db'); b1.addColorStop(1, 'rgba(255,231,219,0)'); g.fillStyle = b1; g.fillRect(0, 0, 1080, 1920);
     const b2 = g.createRadialGradient(1080, 1300, 0, 1080, 1300, 800); b2.addColorStop(0, '#e8f5ff'); b2.addColorStop(1, 'rgba(232,245,255,0)'); g.fillStyle = b2; g.fillRect(0, 0, 1080, 1920);
     g.textAlign = 'center';
     const text = (s, font, color, y) => { g.font = font; g.fillStyle = color; g.fillText(s, 540, y); };
-    text(isYear ? `${YEAR} 신년운세` : '우리 둘 궁합 사진', '64px Jua', ink, 170);
+    text(info.title, '64px Jua', ink, 170);
+    ['#8fd3a0', '#ff9f95', '#f6cf62', '#c9ced9', '#8cc3f2'].forEach((col, i) => { g.fillStyle = col; g.fillRect(340 + i * 80, 205, 80, 10); });   // 오행 다섯 색 띠
     g.save(); g.translate(540, 760); g.rotate(-0.045);   // 폴라로이드
     g.shadowColor = 'rgba(140,90,70,.25)'; g.shadowBlur = 40; g.shadowOffsetY = 16; g.fillStyle = '#fff'; g.fillRect(-410, -460, 820, 940); g.shadowColor = 'transparent';
-    if (img.naturalWidth) g.drawImage(img, -380, -430, 760, 760);
+    if (K === 'group') {   // 단체샷: 3칸 또는 2×2
+      const n = imgs.length, cols = n > 3 ? 2 : 3, rows = n > 3 ? 2 : 1, gap = 8, w = (760 - gap * (cols - 1)) / cols, h = (760 - gap * (rows - 1)) / rows;
+      g.fillStyle = '#2b2523'; g.fillRect(-380, -430, 760, 760);
+      imgs.forEach((im, i) => cover(g, im, -380 + (i % cols) * (w + gap), -430 + Math.floor(i / cols) * (h + gap), w, h));
+    } else cover(g, imgs[0], -380, -430, 760, 760);
     g.save(); g.textAlign = 'right'; g.font = 'bold 40px "Courier New", monospace'; g.fillStyle = '#ffa04d'; g.shadowColor = 'rgba(255,110,30,.8)'; g.shadowBlur = 14;   // 날짜 도장
     g.fillText(stampDate(), 350, 300); g.restore();
-    g.font = '700 54px Gaegu'; g.fillStyle = ink; g.fillText(isYear ? `${r.names[0]} · ${f.p.ttiName}` : `${r.names[0]} × ${r.names[1]}`, 0, 420);
-    g.fillStyle = isYear ? 'rgba(170,214,248,.8)' : 'rgba(255,196,172,.8)'; g.rotate(-0.04); g.fillRect(-120, -490, 240, 64);
+    const cap = K === 'year' ? `${r.names[0]} · ${f.p.ttiName}` : K === 'group' ? r.names.join(' · ') : `${r.names[0]} × ${r.names[1]}`;
+    g.font = `700 ${K === 'group' ? 44 : 54}px Gaegu`; g.fillStyle = ink; g.fillText(cap, 0, 420, 740);
+    g.fillStyle = blue ? 'rgba(170,214,248,.8)' : 'rgba(255,196,172,.8)'; g.rotate(-0.04); g.fillRect(-120, -490, 240, 64);
     g.restore();
-    g.save(); g.translate(880, 330); g.rotate(0.17);   // 점수 스티커
-    g.beginPath(); g.arc(0, 0, 125, 0, Math.PI * 2); g.fillStyle = '#fff'; g.fill(); g.beginPath(); g.arc(0, 0, 112, 0, Math.PI * 2); g.fillStyle = isYear ? '#6fb3e3' : peach; g.fill();
-    g.fillStyle = '#fff'; g.font = isYear ? '62px Jua' : '96px Jua'; g.fillText(isYear ? String(YEAR) : String(f.score), 0, isYear ? 10 : 22); g.font = '34px Jua'; g.fillText(isYear ? f.year.pillar + '년' : '점', 0, isYear ? 58 : 72);
-    g.restore();
-    text(isYear ? f.year.ttiName + ' 해' : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`, '40px Jua', soft, 1370);
+    if (K === 'year' || K === 'match') {   // 스티커: 궁합은 점수, 신년운세는 해
+      g.save(); g.translate(880, 330); g.rotate(0.17);
+      g.beginPath(); g.arc(0, 0, 125, 0, Math.PI * 2); g.fillStyle = '#fff'; g.fill(); g.beginPath(); g.arc(0, 0, 112, 0, Math.PI * 2); g.fillStyle = K === 'year' ? '#6fb3e3' : peach; g.fill();
+      g.fillStyle = '#fff'; g.font = K === 'year' ? '62px Jua' : '96px Jua'; g.fillText(K === 'year' ? String(YEAR) : String(f.score), 0, K === 'year' ? 10 : 22); g.font = '34px Jua'; g.fillText(K === 'year' ? f.year.pillar + '년' : '점', 0, K === 'year' ? 58 : 72);
+      g.restore();
+    }
+    text(K === 'year' ? f.year.ttiName + ' 해' : K === 'group' ? f.people.map(p => p.ttiName).join(' · ') : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`, '40px Jua', soft, 1370);
     g.font = '58px Jua'; lines(g, r.out.headline, 900).forEach((l, i) => text(l, '58px Jua', ink, 1490 + i * 80));
     text(r.out.label, '46px Jua', peach, 1690);
-    text(BRAND, '40px Jua', soft, 1850);
-    const blob = await new Promise(res => c.toBlob(res, 'image/png')), file = new File([blob], isYear ? 'saju-2027.png' : 'saju-gunghap.png', { type: 'image/png' });
-    if (navigator.canShare?.({ files: [file] })) { try { return await navigator.share({ files: [file] }); } catch (e) { if (e.name === 'AbortError') return; } }
-    const a = Object.assign(document.createElement('a'), { href: URL.createObjectURL(blob), download: file.name });
-    a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1e4);
+    // 스토리를 본 친구가 찾아올 수 있게: 이름과 인스타 아이디
+    g.fillStyle = '#fff'; g.beginPath(); g.roundRect(170, 1780, 740, 96, 48); g.fill();
+    text(`너도 해 봐 · ${BRAND} ${HANDLE}`, '40px Jua', ink, 1843);
+    const blob = await new Promise(res => c.toBlob(res, 'image/jpeg', .92)), file = new File([blob], info.file + '.jpg', { type: 'image/jpeg' });
+    // 인스타·카톡 앱 안 브라우저는 내려받기와 파일 공유를 자주 막는다 → 이미지를 크게 띄우고 꾹 눌러 저장하게 한다
+    const inApp = /Instagram|FBAN|FBAV|KAKAOTALK|NAVER|Line\//i.test(navigator.userAgent);
+    if (!inApp && navigator.canShare?.({ files: [file] })) { try { return await navigator.share({ files: [file] }); } catch (e) { if (e.name === 'AbortError') return; } }
+    showSaved(c.toDataURL('image/jpeg', .92), file.name, inApp);
   } finally { btn.disabled = false; }
 }
 
+// 저장용 이미지를 화면 가득 띄운다. 휴대폰은 꾹 눌러 저장, 컴퓨터는 내려받기 버튼
+function showSaved(url, name, inApp) {
+  const d = document.createElement('div'); d.className = 'saved'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-label', '저장할 이미지');
+  d.innerHTML = `<p class="hint">${inApp ? '사진을 꾹 눌러서 저장하세요' : '사진을 꾹 누르거나 아래 버튼으로 저장하세요'}</p><img src="${url}" alt="스토리에 올릴 결과 사진">
+    <div class="duo">${inApp ? '' : `<a class="btn" href="${url}" download="${name}">내려받기</a>`}<button type="button" class="ghost">닫기</button></div>`;
+  d.querySelector('button').onclick = () => d.remove();
+  d.onclick = e => { if (e.target === d) d.remove(); };
+  document.body.append(d);
+}
+
+// 주소 뒤 #으로 화면을 고른다. #family·#bff는 궁합 폼을 그 입구 모드로 연다
+// ---- 운영자 화면(#admin): 입금 대기 주문 목록과 "입금 확인" 버튼. 열쇠는 이 탭에서만 기억한다
+const KIND_NAME = { match: '궁합', year: '신년운세', group: '단체 궁합', reunion: '재회운' };
+async function loadOrders() {
+  const key = $('akey').value; try { sessionStorage.setItem('akey', key); } catch (e) {}
+  $('aerr').hidden = true;
+  try {
+    const { orders } = await api('/api/admin', { key, action: 'list' });
+    const when = ts => new Date(ts * 1000 + 9 * 36e5).toISOString().slice(5, 16).replace('T', ' ');
+    $('alist').innerHTML = orders.length ? `<ul class="rows">${orders.map(o => `<li><b>${o.code}</b><div>${KIND_NAME[o.kind]} · ${won(o.amount)} · ${o.names.map(esc).join(', ')}<i>${when(o.ts)} · ${{ unpaid: '입금 대기', writing: '쓰는 중', done: '보냄' }[o.state]}</i>
+      ${o.state === 'unpaid' ? `<button type="button" class="sky paid" data-id="${o.id}" data-code="${o.code}" data-amount="${o.amount}" style="margin-top:8px;padding:8px">입금 확인</button>` : `<a href="#k=${o.id}">결과지 보기</a>`}</div></li>`).join('')}</ul>` : '<p class="meta">입금 대기 주문이 없어요.</p>';
+    $('alist').querySelectorAll('.paid').forEach(b => b.onclick = async () => {
+      if (!confirm(`주문 코드 ${b.dataset.code}, ${won(b.dataset.amount)} 입금을 확인했나요? 확인하면 AI가 편지를 써요.`)) return;
+      b.disabled = true; b.textContent = '편지 쓰는 중… 1분쯤';
+      try { await api('/api/admin', { key, action: 'paid', id: b.dataset.id }); } catch (e) { $('aerr').textContent = e.message; $('aerr').hidden = false; }
+      loadOrders();
+    });
+  } catch (e) { $('aerr').textContent = e.message; $('aerr').hidden = false; }
+}
+$('aload').onclick = loadOrders;
+try { $('akey').value = sessionStorage.getItem('akey') || ''; } catch (e) {}
+
 function route() {
-  const h = location.hash, view = h.startsWith('#k=') ? 'result' : h === '#match' || h === '#year' ? h.slice(1) : 'home';
-  for (const v of ['home', 'match', 'year', 'result']) $(v).hidden = v !== view;
+  const h = location.hash, m = { '#match': 'match', '#family': 'family', '#bff': 'bff' }[h];
+  const view = h.startsWith('#k=') ? 'result' : m ? 'match' : ['#year', '#group', '#reunion', '#admin'].includes(h) ? h.slice(1) : 'home';
+  if (m) setMode(m);
+  for (const v of ['home', 'match', 'year', 'group', 'reunion', 'admin', 'result']) $(v).hidden = v !== view;
   scrollTo(0, 0);
   if (view === 'result') showResult(h.slice(3));
+  // 미리 보기에서 넘어왔으면: 방금 본 사진을 신청서 위에 두고, 태어난 해를 미리 채운다(뒤 네 자리 월일만 적으면 된다)
+  if (m === 'match' && lastTry) {
+    const { ys, A, B } = lastTry;
+    $('mphoto').innerHTML = pola(`pair/${pairOf(A, B)}.jpg`, `${FULL[A]}와 ${FULL[B]}가 함께 찍힌 사진`, `${FULL[A]}띠 × ${FULL[B]}띠`, 'formphoto', true);
+    if (!$('ad').value) $('ad').value = ys[0]; if (!$('bd').value) $('bd').value = ys[1];
+  } else if (view === 'match') $('mphoto').innerHTML = '';
 }
 addEventListener('hashchange', route); route();
 </script>
