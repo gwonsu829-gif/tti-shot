@@ -440,6 +440,84 @@ fieldset.b { background: linear-gradient(180deg, #f2f9ff, #e6f2ff); }
 .ilju-banner b { font: 22px/1.3 var(--round); }
 .ilju-banner .tag { justify-self: start; }
 #iout .label { white-space: normal; line-height: 1.5; }
+
+/* ---- 8비트 레트로 테마(11-16, 사용자 "몽글 테마가 템플릿 같다, 8비트 레트로로"). 이 묶음이 위의 몽글 테마를 덮는다.
+   규칙: 픽셀 글꼴(갈무리, SIL OFL), 둥근 모서리 없음, 두꺼운 검은 테두리 + 번지지 않는 각진 그림자, 그라데이션 없음, 색은 아래 여섯 개만.
+   동물 사진은 실사 그대로(사용자 선택). 화면 구성·문구·기능은 바꾸지 않는다 */
+@font-face { font-family: 'Galmuri11'; src: url(fonts/Galmuri11-Bold.woff2) format('woff2'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Galmuri14'; src: url(fonts/Galmuri14.woff2) format('woff2'); font-weight: 400; font-display: swap; }
+:root {
+  --px-ink: #22223b; --px-paper: #fffdf5; --px-bg: #f3e6c8; --px-red: #ff5d4f; --px-blue: #3a86ff; --px-yellow: #ffd23f; --px-green: #3cb371;
+  --ink: var(--px-ink); --soft: #5e5a6e; --line: var(--px-ink);
+  --peach: var(--px-red); --peach-d: #e2412f; --peach-l: #ffe1d6; --sky: #bfe0ff; --sky-d: var(--px-blue); --sky-l: #dfeeff;
+  --pink: #ffc2cc; --pink-l: #fff0e8; --pink-d: var(--px-red);
+  --round: 'Galmuri11', 'Jua', sans-serif; --hand: 'Galmuri11', 'Jua', sans-serif;
+  --shadow: 5px 5px 0 var(--px-ink); --puff: 5px 5px 0 var(--px-ink);
+}
+html *, html *::before, html *::after { border-radius: 0 !important; }
+html body { font-family: 'Galmuri14', 'Gowun Dodum', sans-serif; color: var(--px-ink); background: var(--px-bg);
+  background-image: radial-gradient(rgba(34, 34, 59, .10) 1.2px, transparent 1.4px); background-size: 12px 12px; }
+html body::before, .bubbles, .finder { display: none; }
+html h1, html h2, html h3 { font-family: 'Galmuri11', sans-serif; font-weight: 700; letter-spacing: -.02em; text-shadow: none; }
+/* 머리: 게임 제목 띠 */
+html .top { padding: 10px 12px; margin: 0 -4px 16px; background: var(--px-paper); border: 4px solid var(--px-ink); box-shadow: var(--shadow); }
+html .logo { font-family: 'Galmuri11', sans-serif; }
+html .logo i { background: var(--px-red); box-shadow: inset 0 0 0 3px var(--px-ink); }
+/* 카드 = 게임 대화창 */
+html .card, html .price, html .letter, html .envelope, html .shop dl div { background: var(--px-paper); border: 4px solid var(--px-ink); box-shadow: var(--shadow); }
+html .card.peach, html .envelope { background: #ffe9dc; }
+html .card.sky { background: #e3f0ff; }
+html .product:nth-of-type(odd) { background: var(--px-paper); }
+/* 버튼 = 눌리는 게임 버튼 */
+html .btn, html button { font-family: 'Galmuri11', sans-serif; color: #fff; background: var(--px-red); border: 4px solid var(--px-ink);
+  box-shadow: 0 6px 0 var(--px-ink); text-shadow: 2px 2px 0 rgba(34, 34, 59, .35); transition: transform .05s, box-shadow .05s; }
+html .btn::before, html button::before { display: none; }
+html .btn:active, html button:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--px-ink); }
+html .btn.sky, html button.sky { background: var(--px-blue); box-shadow: 0 6px 0 var(--px-ink); }
+html .btn.ghost, html button.ghost, html .stars button, html .chips button { color: var(--px-ink); background: var(--px-paper); text-shadow: none; }
+html .chips button[aria-pressed=true], html .stars button[aria-pressed=true] { color: #fff; background: var(--px-blue); }
+html button:disabled { background: #b8b4c4; }
+/* 사진 틀: 하얀 테두리 + 검은 외곽선, 핀은 빨간 픽셀 한 칸 */
+html .pola { padding: 10px 10px 0; border: 3px solid var(--px-ink); box-shadow: var(--shadow); }
+html .pola::before { width: 16px; height: 16px; top: -10px; background: var(--px-red); box-shadow: 0 0 0 3px var(--px-ink); transform: translateX(-50%); }
+html .pola.blue::before { background: var(--px-blue); box-shadow: 0 0 0 3px var(--px-ink); }
+html .pola figcaption { font-family: 'Galmuri11', sans-serif; font-size: 15px; }
+html .stack .pola { animation: none; }
+/* 제목·강조 */
+html .hero h1 { color: var(--px-ink); -webkit-text-stroke: 0; text-shadow: 3px 3px 0 var(--px-yellow); line-height: 1.35; }
+html .mark { background: var(--px-yellow); padding: 0 4px; box-shadow: 3px 3px 0 var(--px-ink); }
+html em { color: var(--px-red); }
+/* 꼬리표·딱지·점수 */
+html .tag, html .label, html .perks span, html .rel { font-family: 'Galmuri11', sans-serif; color: #fff; background: var(--px-ink); border: 0; box-shadow: none; }
+html .tag.p { background: var(--px-red); box-shadow: 3px 3px 0 var(--px-ink); }
+html .label { color: var(--px-ink); background: var(--px-yellow); box-shadow: 3px 3px 0 var(--px-ink); }
+html .sticker { background: var(--px-red); border: 4px solid var(--px-ink); box-shadow: 4px 4px 0 var(--px-ink); font-family: 'Galmuri11', sans-serif; }
+html .sticker.sky { background: var(--px-blue); }
+/* 입력 칸 */
+html input, html select, html textarea { font-family: 'Galmuri14', sans-serif; background: #fff; border: 3px solid var(--px-ink); box-shadow: inset 3px 3px 0 rgba(34, 34, 59, .12); }
+html input:focus, html select:focus, html textarea:focus { border-color: var(--px-blue); box-shadow: 0 0 0 3px var(--px-yellow); outline: none; }
+html fieldset { background: #ffe9dc; border: 3px dashed var(--px-ink); box-shadow: none; }
+html fieldset.b { background: #e3f0ff; }
+/* 반짝이 → 깜빡이는 픽셀 한 칸, 오행 띠는 각진 다섯 칸 */
+html .spark { clip-path: none; width: 8px; height: 8px; animation: blink 1.2s steps(2) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+/* 필름·안내판·입금 상자 */
+html .film { background: var(--px-ink); }
+html .reel figcaption { color: #fff; font-family: 'Galmuri11', sans-serif; }
+html .shop .sign { background: var(--px-red); border: 4px solid var(--px-ink); }
+html .envelope .flap { background: #ffd2c0; }
+html .saved img { border: 4px solid var(--px-ink); }
+/* 60동물 입구 배너: 게임 시작 화면처럼 */
+html .card.ilju-banner { background: var(--px-ink); color: #fff; }
+/* 결과지 사주표: 글자 칸에 검은 테두리, 오행 막대는 각진 칸 */
+html .saju b { border: 3px solid var(--px-ink); box-shadow: 3px 3px 0 var(--px-ink); }
+html .saju b u, html .saju i { font-family: 'Galmuri11', sans-serif; }
+html .bar span { border: 2px solid var(--px-ink); background: #fff; height: 14px; }
+html .letter .no { color: #fff; background: var(--px-ink); font-family: 'Galmuri11', sans-serif; }
+html .to, html .from { font-family: 'Galmuri11', sans-serif; }
+html .ilju-banner b { font-family: 'Galmuri11', sans-serif; color: var(--px-yellow); }
+html .ilju-banner .meta { color: #fff; }
+html .ilju-banner .tag.p { box-shadow: 3px 3px 0 #000; }
 </style>
 <div class="bubbles" aria-hidden="true"><i style="left:6%;width:46px;height:46px;animation-duration:19s;animation-delay:-3s"></i><i style="left:28%;width:24px;height:24px;animation-duration:15s;animation-delay:-9s;--dx:-30px"></i><i style="left:58%;width:58px;height:58px;animation-duration:24s;animation-delay:-14s"></i><i style="left:80%;width:30px;height:30px;animation-duration:17s;animation-delay:-6s;--dx:-24px"></i><i style="left:44%;width:18px;height:18px;animation-duration:13s;animation-delay:-11s"></i></div>
 <main>
@@ -1045,6 +1123,14 @@ function cover(g, img, x, y, w, h) {   // 사진을 칸에 꽉 차게 가운데�
   const s = Math.max(w / img.naturalWidth, h / img.naturalHeight), sw = w / s, sh = h / s;
   g.drawImage(img, (img.naturalWidth - sw) / 2, (img.naturalHeight - sh) / 2, sw, sh, x, y, w, h);
 }
+// 8비트 레트로 그림: 도트 무늬 베이지 바탕, 검은 테두리 + 각진 그림자 상자
+function retroBg(g) {
+  g.fillStyle = '#f3e6c8'; g.fillRect(0, 0, 1080, 1920); g.fillStyle = 'rgba(34,34,59,.10)';
+  for (let y = 12; y < 1920; y += 24) for (let x = 12; x < 1080; x += 24) g.fillRect(x, y, 3, 3);
+}
+function retroBox(g, x, y, w, h, fill) {
+  g.fillStyle = '#22223b'; g.fillRect(x + 12, y + 12, w, h); g.fillRect(x - 6, y - 6, w + 12, h + 12); g.fillStyle = fill; g.fillRect(x, y, w, h);
+}
 async function card(r, btn) {
   btn.disabled = true;
   try {
@@ -1052,17 +1138,15 @@ async function card(r, btn) {
     const srcs = K === 'year' ? [`solo/${f.p.tti}.jpg`] : K === 'group' ? f.people.map(p => `solo/${p.tti}.jpg`) : [`pair/${f.pair}.jpg`];
     const imgs = srcs.map(s => Object.assign(new Image(), { src: s }));
     c.width = 1080; c.height = 1920;
-    await Promise.all([document.fonts.load('60px Jua'), document.fonts.load('700 60px Gaegu'), ...imgs.map(i => i.decode())].map(p => p.catch(() => {})));
-    const peach = '#ec8b69', ink = '#4b3b36', soft = '#8c7a73', blue = K === 'year' || K === 'reunion';
-    g.fillStyle = '#fff8ef'; g.fillRect(0, 0, 1080, 1920);
-    const b1 = g.createRadialGradient(0, 0, 0, 0, 0, 900); b1.addColorStop(0, '#ffe7db'); b1.addColorStop(1, 'rgba(255,231,219,0)'); g.fillStyle = b1; g.fillRect(0, 0, 1080, 1920);
-    const b2 = g.createRadialGradient(1080, 1300, 0, 1080, 1300, 800); b2.addColorStop(0, '#e8f5ff'); b2.addColorStop(1, 'rgba(232,245,255,0)'); g.fillStyle = b2; g.fillRect(0, 0, 1080, 1920);
+    await Promise.all([document.fonts.load('60px Galmuri11'), document.fonts.load('700 60px Gaegu'), ...imgs.map(i => i.decode())].map(p => p.catch(() => {})));
+    const peach = '#ff5d4f', ink = '#22223b', soft = '#5e5a6e', blue = K === 'year' || K === 'reunion';   // 8비트 레트로 색(사이트와 같게)
+    retroBg(g);
     g.textAlign = 'center';
     const text = (s, font, color, y) => { g.font = font; g.fillStyle = color; g.fillText(s, 540, y); };
-    text(info.title, '64px Jua', ink, 170);
+    text(info.title, '64px Galmuri11', ink, 170);
     ['#8fd3a0', '#ff9f95', '#f6cf62', '#c9ced9', '#8cc3f2'].forEach((col, i) => { g.fillStyle = col; g.fillRect(340 + i * 80, 205, 80, 10); });   // 오행 다섯 색 띠
     g.save(); g.translate(540, 760); g.rotate(-0.045);   // 폴라로이드
-    g.shadowColor = 'rgba(140,90,70,.25)'; g.shadowBlur = 40; g.shadowOffsetY = 16; g.fillStyle = '#fff'; g.fillRect(-410, -460, 820, 940); g.shadowColor = 'transparent';
+    retroBox(g, -410, -460, 820, 940, '#fff');
     if (K === 'group') {   // 단체샷: 3칸 또는 2×2
       const n = imgs.length, cols = n > 3 ? 2 : 3, rows = n > 3 ? 2 : 1, gap = 8, w = (760 - gap * (cols - 1)) / cols, h = (760 - gap * (rows - 1)) / rows;
       g.fillStyle = '#2b2523'; g.fillRect(-380, -430, 760, 760);
@@ -1071,21 +1155,21 @@ async function card(r, btn) {
     g.save(); g.textAlign = 'right'; g.font = 'bold 40px "Courier New", monospace'; g.fillStyle = '#ffa04d'; g.shadowColor = 'rgba(255,110,30,.8)'; g.shadowBlur = 14;   // 날짜 도장
     g.fillText(stampDate(), 350, 300); g.restore();
     const cap = K === 'year' ? `${r.names[0]} · ${f.p.ttiName}` : K === 'group' ? r.names.join(' · ') : `${r.names[0]} × ${r.names[1]}`;
-    g.font = `700 ${K === 'group' ? 44 : 54}px Gaegu`; g.fillStyle = ink; g.fillText(cap, 0, 420, 740);
-    g.fillStyle = blue ? 'rgba(170,214,248,.8)' : 'rgba(255,196,172,.8)'; g.rotate(-0.04); g.fillRect(-120, -490, 240, 64);
+    g.font = `${K === 'group' ? 42 : 50}px Galmuri11`; g.fillStyle = ink; g.fillText(cap, 0, 420, 740);
+    g.fillStyle = ink; g.fillRect(-22, -488, 44, 44); g.fillStyle = blue ? '#3a86ff' : peach; g.fillRect(-16, -482, 32, 32);   // 픽셀 핀
     g.restore();
     if (K === 'year' || K === 'match') {   // 스티커: 궁합은 점수, 신년운세는 해
       g.save(); g.translate(880, 330); g.rotate(0.17);
-      g.beginPath(); g.arc(0, 0, 125, 0, Math.PI * 2); g.fillStyle = '#fff'; g.fill(); g.beginPath(); g.arc(0, 0, 112, 0, Math.PI * 2); g.fillStyle = K === 'year' ? '#6fb3e3' : peach; g.fill();
-      g.fillStyle = '#fff'; g.font = K === 'year' ? '62px Jua' : '96px Jua'; g.fillText(K === 'year' ? String(YEAR) : String(f.score), 0, K === 'year' ? 10 : 22); g.font = '34px Jua'; g.fillText(K === 'year' ? f.year.pillar + '년' : '점', 0, K === 'year' ? 58 : 72);
+      retroBox(g, -115, -115, 230, 230, K === 'year' ? '#3a86ff' : peach);
+      g.fillStyle = '#fff'; g.font = K === 'year' ? '62px Galmuri11' : '96px Galmuri11'; g.fillText(K === 'year' ? String(YEAR) : String(f.score), 0, K === 'year' ? 10 : 22); g.font = '34px Galmuri11'; g.fillText(K === 'year' ? f.year.pillar + '년' : '점', 0, K === 'year' ? 58 : 72);
       g.restore();
     }
-    text(K === 'year' ? f.year.ttiName + ' 해' : K === 'group' ? f.people.map(p => p.ttiName).join(' · ') : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`, '40px Jua', soft, 1370);
-    g.font = '58px Jua'; lines(g, r.out.headline, 900).forEach((l, i) => text(l, '58px Jua', ink, 1490 + i * 80));
-    text(r.out.label, '46px Jua', peach, 1690);
+    text(K === 'year' ? f.year.ttiName + ' 해' : K === 'group' ? f.people.map(p => p.ttiName).join(' · ') : `${f.a.ttiName} × ${f.b.ttiName} · ${f.relName}`, '40px Galmuri11', soft, 1370);
+    g.font = '58px Galmuri11'; lines(g, r.out.headline, 900).forEach((l, i) => text(l, '58px Galmuri11', ink, 1490 + i * 80));
+    text(r.out.label, '46px Galmuri11', peach, 1690);
     // 스토리를 본 친구가 찾아올 수 있게: 이름과 인스타 아이디
-    g.fillStyle = '#fff'; g.beginPath(); g.roundRect(170, 1780, 740, 96, 48); g.fill();
-    text(`너도 해 봐 · ${BRAND} ${HANDLE}`, '40px Jua', ink, 1843);
+    retroBox(g, 170, 1772, 740, 104, '#fff');
+    text(`너도 해 봐 · ${BRAND} ${HANDLE}`, '40px Galmuri11', ink, 1838);
     const blob = await new Promise(res => c.toBlob(res, 'image/jpeg', .92)), file = new File([blob], info.file + '.jpg', { type: 'image/jpeg' });
     // 인스타·카톡 앱 안 브라우저는 내려받기와 파일 공유를 자주 막는다 → 이미지를 크게 띄우고 꾹 눌러 저장하게 한다
     const inApp = /Instagram|FBAN|FBAV|KAKAOTALK|NAVER|Line\//i.test(navigator.userAgent);
@@ -1184,15 +1268,15 @@ $('ishot').onclick = () => {
     e.target.disabled = true;
     try {
       const c = document.createElement('canvas'), g = c.getContext('2d'), img = Object.assign(new Image(), { src: `ilju/${i}.jpg` });
-      await img.decode(); await document.fonts.ready; c.width = 1080; c.height = 1920;
-      g.fillStyle = '#fff8ef'; g.fillRect(0, 0, 1080, 1920);
-      g.save(); g.translate(540, 820); g.rotate(-.03); g.shadowColor = 'rgba(120,80,60,.25)'; g.shadowBlur = 40; g.fillStyle = '#fff'; g.fillRect(-400, -420, 800, 900); g.restore();
+      await img.decode(); await document.fonts.load('40px Galmuri11'); c.width = 1080; c.height = 1920;
+      retroBg(g);
+      g.save(); g.translate(540, 820); g.rotate(-.03); retroBox(g, -400, -420, 800, 900, '#fff'); g.restore();
       g.save(); g.translate(540, 820); g.rotate(-.03); cover(g, img, -360, -380, 720, 720); g.restore();
-      g.textAlign = 'center'; g.fillStyle = '#ec8b69'; g.font = '56px Jua'; g.fillText('나의 진짜 동물은', 540, 260);
-      g.fillStyle = '#4b3b36'; g.font = '110px Jua'; g.fillText(name, 540, 1440);
-      g.font = '40px Jua'; g.fillStyle = '#8c7a73'; g.fillText('띠는 태어난 해, 진짜 나는 태어난 날', 540, 1530);
-      g.fillStyle = '#fff'; g.beginPath(); g.roundRect(170, 1700, 740, 96, 48); g.fill();
-      g.fillStyle = '#4b3b36'; g.font = '40px Jua'; g.fillText(`너도 찾아 봐 · ${BRAND} ${HANDLE}`, 540, 1763);
+      g.textAlign = 'center'; g.fillStyle = '#ff5d4f'; g.font = '56px Galmuri11'; g.fillText('나의 진짜 동물은', 540, 260);
+      g.fillStyle = '#22223b'; g.font = '110px Galmuri11'; g.fillText(name, 540, 1440);
+      g.font = '40px Galmuri11'; g.fillStyle = '#5e5a6e'; g.fillText('띠는 태어난 해, 진짜 나는 태어난 날', 540, 1530);
+      retroBox(g, 170, 1692, 740, 104, '#fff');
+      g.fillStyle = '#22223b'; g.font = '40px Galmuri11'; g.fillText(`너도 찾아 봐 · ${BRAND} ${HANDLE}`, 540, 1763);
       const inApp = /Instagram|FBAN|FBAV|KAKAOTALK|NAVER|Line\//i.test(navigator.userAgent);
       showSaved(c.toDataURL('image/jpeg', .92), 'my-animal.jpg', inApp);
     } finally { e.target.disabled = false; }
