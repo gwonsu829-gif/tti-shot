@@ -1234,8 +1234,8 @@ function iljuOf(d8) {   // '19960302' → 0~59, 날짜가 틀리면 -1
 let ILJU_STATE = null;
 fetch('state.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => { ILJU_STATE = j; }).catch(() => {});
 function iljuStatus(i) {
-  const s = ILJU_STATE, reel = s?.latest_reel || 'https://www.instagram.com/tti.shot/';
-  if (!s) return { text: '11월 19일(목) 밤 시작! 시작하면 이 동물 이름을 댓글에 적어 주세요', reel };
+  const s = ILJU_STATE, reel = s?.latest_reel || 'https://www.instagram.com/tti.shot/reel/DfyzTtNBZXr/';   // 순위 파일이 없을 땐 개전 릴스(11-16 게시)
+  if (!s) return { text: '전쟁 시작! 오늘 밤 자정 첫 마감, 이 동물 이름을 댓글에 적어 주세요', reel };
   if (s.champion === i) return { text: '60동물의 왕이에요', reel };
   const out = s.out.find(o => o.id === i);
   if (out) return { text: `${out.day}일차에 탈락했어요 · 일요일 부활전에서 살릴 수 있어요`, reel };
