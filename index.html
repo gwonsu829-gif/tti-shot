@@ -452,10 +452,11 @@ fieldset.b { background: linear-gradient(180deg, #f2f9ff, #e6f2ff); }
   --peach: var(--px-red); --peach-d: #e2412f; --peach-l: #ffe1d6; --sky: #bfe0ff; --sky-d: var(--px-blue); --sky-l: #dfeeff;
   --pink: #ffc2cc; --pink-l: #fff0e8; --pink-d: var(--px-red);
   --round: 'Galmuri11', 'Jua', sans-serif; --hand: 'Galmuri11', 'Jua', sans-serif;
+  --reading-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   --shadow: 5px 5px 0 var(--px-ink); --puff: 5px 5px 0 var(--px-ink);
 }
 html *, html *::before, html *::after { border-radius: 0 !important; }
-html body { font-family: 'Galmuri14', 'Gowun Dodum', sans-serif; color: var(--px-ink); background: var(--px-bg);
+html body { font-family: var(--reading-font); color: var(--px-ink); background: var(--px-bg);
   background-image: radial-gradient(rgba(34, 34, 59, .10) 1.2px, transparent 1.4px); background-size: 12px 12px; }
 html body::before, .bubbles, .finder { display: none; }
 html h1, html h2, html h3 { font-family: 'Galmuri11', sans-serif; font-weight: 700; letter-spacing: -.02em; text-shadow: none; }
@@ -494,7 +495,7 @@ html .label { color: var(--px-ink); background: var(--px-yellow); box-shadow: 3p
 html .sticker { background: var(--px-red); border: 4px solid var(--px-ink); box-shadow: 4px 4px 0 var(--px-ink); font-family: 'Galmuri11', sans-serif; }
 html .sticker.sky { background: var(--px-blue); }
 /* 입력 칸 */
-html input, html select, html textarea { font-family: 'Galmuri14', sans-serif; background: #fff; border: 3px solid var(--px-ink); box-shadow: inset 3px 3px 0 rgba(34, 34, 59, .12); }
+html input, html select, html textarea { font-family: var(--reading-font); background: #fff; border: 3px solid var(--px-ink); box-shadow: inset 3px 3px 0 rgba(34, 34, 59, .12); }
 html input:focus, html select:focus, html textarea:focus { border-color: var(--px-blue); box-shadow: 0 0 0 3px var(--px-yellow); outline: none; }
 html fieldset { background: #ffe9dc; border: 3px dashed var(--px-ink); box-shadow: none; }
 html fieldset.b { background: #e3f0ff; }
@@ -539,23 +540,27 @@ html .hero h1 { font-size: 27px; }
 .photo-link { width: 100%; font-size: 13px; margin-top: 8px; }
 .cta .free-first { display: block; max-width: 428px; margin: 0 auto; }
 .photo-offer { margin: 22px 0; }
-.reading-offer { margin-top: 22px; padding: 18px 14px; border: 3px dashed var(--px-ink); background: #fff4cc; text-align: left; }
-.reading-offer h3 { margin: 4px 0 10px; font-family: 'Galmuri11', sans-serif; font-size: 19px; line-height: 1.5; }
+.reading-offer { margin-top: 18px; padding: 14px 12px; border: 3px dashed var(--px-ink); background: #fff4cc; text-align: left; }
+.reading-offer h3 { margin: 4px 0 8px; font-family: 'Galmuri11', sans-serif; font-size: 19px; line-height: 1.5; }
 .reading-offer .reading-intro { font-size: 14px; margin: 8px 0; }
 .reading-benefits { padding-left: 19px; font-size: 13px; margin: 10px 0 16px; }
 .reading-benefits li { margin: 6px 0; }
-.reading-example { background: #fffefa; border: 2px solid var(--px-ink); padding: 14px; box-shadow: 4px 4px 0 rgba(34,34,59,.12); }
+.reading-example { background: #fffefa; border: 2px solid var(--px-ink); padding: 12px; box-shadow: 4px 4px 0 rgba(34,34,59,.12); }
 .reading-example h4 { margin: 8px 0; font: 16px/1.5 'Galmuri11', sans-serif; }
-.reading-example .example-who { display: flex; align-items: center; gap: 10px; margin: 12px 0; font-size: 12px; color: var(--soft); }
-.example-who img { width: 66px; height: 66px; object-fit: cover; border: 2px solid var(--px-ink); }
-.reading-example blockquote { margin: 10px 0; padding: 0 0 0 11px; border-left: 3px solid var(--px-blue); font-size: 13px; line-height: 1.9; }
+.reading-example .example-who { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-size: 12px; color: var(--soft); }
+.example-who img { width: 48px; height: 48px; object-fit: cover; border: 2px solid var(--px-ink); }
+.reading-example blockquote { margin: 10px 0; padding: 0 0 0 10px; border-left: 3px solid var(--px-blue); font-size: 15px; line-height: 1.75; }
 .reading-example .example-action { margin: 12px 0; padding: 10px; background: var(--sky-l); font-size: 13px; }
 .reading-example .example-action b { display: block; margin-bottom: 4px; }
 .reading-example small { font-size: 11px; }
-.reading-price { margin: 18px 0 8px; font-size: 13px; text-align: center; }
+.reading-price { margin: 12px 0 6px; font-size: 13px; text-align: center; }
 .reading-price strong { display: block; font: 19px/1.6 'Galmuri11', sans-serif; color: var(--px-red); }
 .reading-offer .btn { margin-top: 8px; text-align: center; font-size: 15px; padding-left: 6px; padding-right: 6px; }
 .reading-note { text-align: center; font-size: 11px; color: var(--soft); margin: 10px 0 0; }
+.reading-details { margin-top: 14px; font-size: 13px; }
+.reading-details summary { cursor: pointer; padding: 8px 0; color: var(--ink); font-weight: 600; }
+html .letter p:not(.to):not(.from), html .daily .line { font-family: var(--reading-font); }
+html .letter p:not(.to):not(.from) { font-size: 16px; line-height: 1.9; }
 @media (max-width: 360px) {
   html .hero h1 { font-size: 22px; }
   .hero .stack { height: 118px; }
@@ -919,38 +924,41 @@ function readingExample() {
   const section = o.sections.find(s => /물어보신/.test(s.title)) || o.sections.find(s => /부딪히는/.test(s.title)) || o.sections[0];
   const paragraphs = section.body.split(/\n+/).filter(Boolean);
   const excerpt = paragraphs.find(p => /약속|구체적|한 줄/.test(p)) || paragraphs[0];
-  const short = excerpt.length > 300 ? excerpt.slice(0, 300) + '…' : excerpt;
+  const sentences = excerpt.match(/[^.!?]+[.!?]?/g) || [excerpt];
+  const focus = (sentences.find(s => /횟수를 맞추기보다|약속|구체적|한 줄/.test(s)) || sentences[0]).trim();
+  const short = focus.length > 150 ? focus.slice(0, 150) + '…' : focus;
   const action = o.todo?.[0];
-  return `<span class="tag">기존 공개 결과에서 발췌</span><h4>${esc(section.title)}</h4>
+  return `<span class="tag">실제 풀이 일부</span>
     <div class="example-who"><img src="pair/${pairOf(r.facts.a.tti, r.facts.b.tti)}.jpg" alt="예시에 사용된 두 동물 사진" loading="lazy"><span>${esc(r.names.join(' × '))}<br>${esc(r.facts.a.ttiName)} × ${esc(r.facts.b.ttiName)} · 예시 조합</span></div>
     <blockquote>${esc(short)}</blockquote>
     ${action ? `<p class="example-action"><b>둘이 해 볼 일 · 예시</b>${esc(action)}</p>` : ''}
-    <a href="#k=${EXAMPLE_ID}">이 예시 결과지 전부 읽어 보기 →</a>
-    <small>기존에 생성한 다른 두 사람의 공개 결과예요. 지금 고른 동물 조합의 개인 풀이와는 달라요.</small>`;
+    <small>다른 두 사람의 공개 예시예요. 내 조합의 결과와는 달라요.</small>`;
 }
 function readingOffer() {
   return `<section class="reading-offer" aria-label="자세한 궁합과 실제 결과 예시">
-    <span class="tag p">사진 다음엔, 우리 둘 이야기</span>
-    <h3>좋아하는데도,<br>왜 같은 일로 서운할까?</h3>
-    <p class="reading-intro">사진은 태어난 해로 골라 드렸어요.<br>자세한 풀이는 두 사람의 생일과 지금 관계, 궁금한 점을 함께 받아 써 드려요.</p>
-    <ul class="reading-benefits"><li><b>서로 다른 표현 방식</b> — 마음을 주고받는 방식 살펴보기</li><li><b>부딪히는 점과 푸는 법</b> — 서운함을 말로 꺼낼 때 참고할 이야기</li><li><b>직접 적은 고민에 대한 풀이</b> — 우리 상황을 넣어 읽기</li></ul>
+    <h3>왜 같은 일로 서운할까?</h3>
+    <p class="reading-intro">두 사람의 생일과 지금 관계로 읽는,<br>우리 둘만의 풀이예요.</p>
     <div class="reading-example" id="previewExample">${readingExample()}</div>
     <p class="reading-price" id="readingPrice"></p>
     <a class="btn" href="#match" id="readingCta">우리 둘 자세한 풀이 보기</a>
-    <p class="reading-note">생일·관계·궁금한 점 입력 → 풀이 받기<br>재미로 보는 사주 풀이예요.</p>
+    <p class="reading-note">재미로 보는 사주 풀이예요.</p>
+    <details class="reading-details"><summary>받는 내용·전체 예시 보기</summary>
+      <ul class="reading-benefits"><li>서로 다른 표현 방식과 부딪히는 점</li><li>직접 적은 고민에 대한 풀이</li><li>앞으로 석 달, 둘이 해 볼 일과 사주표</li></ul>
+      <a href="#k=${EXAMPLE_ID}">공개 예시 결과지 전부 읽기 →</a>
+    </details>
   </section>`;
 }
 function updateReadingPrice() {
   if (!$('readingPrice')) return;
   const price = won(PRICE.match);
   if (FREE_LEFT === null) {
-    $('readingPrice').innerHTML = `<strong>상세 궁합 ${price}</strong>무료 체험 가능 여부는 신청 전에 확인해 주세요.`;
+    $('readingPrice').innerHTML = `<strong>상세 궁합 ${price}</strong>체험 가능 여부는 신청 전 확인해 주세요.`;
     $('readingCta').textContent = '우리 둘 자세한 풀이 보기';
   } else if (FREE_LEFT > 0) {
-    $('readingPrice').innerHTML = `<s>상세 궁합 ${price}</s><strong>현재 남은 체험 ${FREE_LEFT}자리 · 0원</strong>체험은 앞의 두 편을 읽고 후기를 남기면 나머지가 열려요.`;
+    $('readingPrice').innerHTML = `<s>상세 궁합 ${price}</s><strong>체험 ${FREE_LEFT}자리 · 0원</strong>앞의 두 편을 읽고 후기를 남기면 전부 열려요.`;
     $('readingCta').textContent = '우리 둘 풀이 체험하기 · 0원';
   } else {
-    $('readingPrice').innerHTML = `<strong>상세 궁합 ${price}</strong>한 번 결제 · 사진과 풀이 편지, 앞으로 석 달,<br>둘이 해 볼 일을 받아요.`;
+    $('readingPrice').innerHTML = `<strong>상세 궁합 ${price}</strong>한 번 결제 · 사진과 풀이 편지`;
     $('readingCta').textContent = `우리 둘 풀이 받기 · ${price}`;
   }
 }
