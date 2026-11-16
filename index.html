@@ -525,7 +525,7 @@ html .ilju-banner .tag.p { box-shadow: 3px 3px 0 #000; }
 
   <div id="home" hidden>
     <div class="flash" aria-hidden="true"></div>
-    <a class="card pop sky ilju-banner" href="#ilju"><span class="tag p">새 게임 · 살아남아라 60동물</span><b>띠는 태어난 해, 진짜 나는 태어난 날</b><span class="meta">생일 넣고 내 진짜 동물 찾기 · 무료 →</span></a>
+    <a class="card pop sky ilju-banner" href="#ilju"><span class="tag p">새 게임 · 살아남아라 60동물</span><b>내 일주 동물은 뭘까?</b><span class="meta">일주 동물 = 태어난 날 동물 · 생일 넣고 찾기 · 무료 →</span></a>
     <section class="hero">
       <h1>생일만 넣으면 끝,<br><span class="mark">띠 동물 사진</span>으로 보는 사주</h1>
       <p>카메라로 찍는 게 아니에요. 생년월일만 넣으면<br>우리 띠 동물 사진과 풀이 편지가 와요.</p>
@@ -731,10 +731,10 @@ html .ilju-banner .tag.p { box-shadow: 3px 3px 0 #000; }
   <div id="ilju" hidden>
     <section class="card pop" data-shot="60동물">
       <span class="tag p">무료 · 살아남아라 60동물</span>
-      <h2>내 진짜 동물 찾기</h2>
-      <p class="meta">띠는 태어난 해로 12가지, 진짜 '나'를 뜻하는 동물은 태어난 날로 60가지예요. 생년월일만 넣으면 바로 나와요.</p>
+      <h2>내 일주 동물 찾기</h2>
+      <p class="meta">일주 동물은 <b>태어난 날의 동물</b>이에요. 띠(태어난 해)는 12가지, 일주 동물은 60가지예요. 사주에서는 이 동물이 '나 자신'을 뜻해요. 생년월일만 넣으면 바로 나와요.</p>
       <div><label for="id8">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="id8"></div>
-      <button type="button" class="shutter" id="ishot"><i aria-hidden="true"></i>내 진짜 동물 보기</button>
+      <button type="button" class="shutter" id="ishot"><i aria-hidden="true"></i>내 일주 동물 찾기</button>
       <p class="err" id="ierr" role="alert" hidden></p>
       <small>생일은 이 화면에서만 계산하고 어디에도 보내지 않아요. 밤 11시 넘어 태어났다면 다음 날 동물일 수도 있어요.</small>
     </section>
@@ -1249,7 +1249,7 @@ $('ishot').onclick = () => {
   const name = iljuName(i), nb = name.replace(' ', ' '), st = iljuStatus(i);   // nb: 화면에서 '노란 / 개'로 끊기지 않게
   flash();
   $('iout').innerHTML = `<section class="card pop" style="text-align:center">${pola(`ilju/${i}.jpg`, `${name} 사진`, nb, 'develop quick', true)}
-    <h2>나의 진짜 동물은 ${nb}</h2><p>${ILJU_STEM[i % 10]}, ${ILJU_ANIMAL[i % 12]} ${nb}</p>
+    <h2>나의 일주 동물은 ${nb}</h2><p class="meta">일주 동물 = 태어난 날 동물</p><p>${ILJU_STEM[i % 10]}, ${ILJU_ANIMAL[i % 12]} ${nb}</p>
     <p><span class="label">${esc(st.text)}</span></p>
     <p class="meta">댓글에 <b>${name}</b>${(name.charCodeAt(name.length - 1) - 0xAC00) % 28 ? '이라고' : '라고'} 적으면 한 표예요. 색까지 꼭 적어 주세요.</p>
     <a class="btn" href="${esc(st.reel)}" target="_blank" rel="noopener">댓글로 우리 동물 살리러 가기</a>
@@ -1261,7 +1261,7 @@ $('ishot').onclick = () => {
   $('imatch').onclick = () => { $('ad').value = d8; };
   $('ishare').onclick = async e => {
     const url = location.origin + location.pathname + '?ilju=1';
-    try { if (navigator.share) return await navigator.share({ title: '내 진짜 동물 찾기', text: `나는 ${name}래. 너는?`, url }); } catch (x) { if (x.name === 'AbortError') return; }
+    try { if (navigator.share) return await navigator.share({ title: '내 일주 동물 찾기', text: `내 일주 동물은 ${name}래. 너는?`, url }); } catch (x) { if (x.name === 'AbortError') return; }
     navigator.clipboard?.writeText(url).then(() => { e.target.textContent = '링크를 복사했어요'; }, () => {});
   };
   $('isave').onclick = async e => {   // 스토리 크기 한 장: 사진 + 이름 + 아이디
@@ -1272,9 +1272,9 @@ $('ishot').onclick = () => {
       retroBg(g);
       g.save(); g.translate(540, 820); g.rotate(-.03); retroBox(g, -400, -420, 800, 900, '#fff'); g.restore();
       g.save(); g.translate(540, 820); g.rotate(-.03); cover(g, img, -360, -380, 720, 720); g.restore();
-      g.textAlign = 'center'; g.fillStyle = '#ff5d4f'; g.font = '56px Galmuri11'; g.fillText('나의 진짜 동물은', 540, 260);
+      g.textAlign = 'center'; g.fillStyle = '#ff5d4f'; g.font = '56px Galmuri11'; g.fillText('나의 일주 동물은', 540, 260);
       g.fillStyle = '#22223b'; g.font = '110px Galmuri11'; g.fillText(name, 540, 1440);
-      g.font = '40px Galmuri11'; g.fillStyle = '#5e5a6e'; g.fillText('띠는 태어난 해, 진짜 나는 태어난 날', 540, 1530);
+      g.font = '40px Galmuri11'; g.fillStyle = '#5e5a6e'; g.fillText('일주 동물 = 태어난 날 동물', 540, 1530);
       retroBox(g, 170, 1692, 740, 104, '#fff');
       g.fillStyle = '#22223b'; g.font = '40px Galmuri11'; g.fillText(`너도 찾아 봐 · ${BRAND} ${HANDLE}`, 540, 1763);
       const inApp = /Instagram|FBAN|FBAV|KAKAOTALK|NAVER|Line\//i.test(navigator.userAgent);
