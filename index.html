@@ -435,6 +435,11 @@ fieldset.b { background: linear-gradient(180deg, #f2f9ff, #e6f2ff); }
   .develop img { transition: none; filter: none; } .btn, button { transition: none; }
   .reel, .rec b, .count { animation: none; }
 }
+/* 살아남아라 60동물 입구 배너 */
+.ilju-banner { display: grid; gap: 4px; text-decoration: none; color: var(--ink); margin-bottom: 14px; }
+.ilju-banner b { font: 22px/1.3 var(--round); }
+.ilju-banner .tag { justify-self: start; }
+#iout .label { white-space: normal; line-height: 1.5; }
 </style>
 <div class="bubbles" aria-hidden="true"><i style="left:6%;width:46px;height:46px;animation-duration:19s;animation-delay:-3s"></i><i style="left:28%;width:24px;height:24px;animation-duration:15s;animation-delay:-9s;--dx:-30px"></i><i style="left:58%;width:58px;height:58px;animation-duration:24s;animation-delay:-14s"></i><i style="left:80%;width:30px;height:30px;animation-duration:17s;animation-delay:-6s;--dx:-24px"></i><i style="left:44%;width:18px;height:18px;animation-duration:13s;animation-delay:-11s"></i></div>
 <main>
@@ -442,6 +447,7 @@ fieldset.b { background: linear-gradient(180deg, #f2f9ff, #e6f2ff); }
 
   <div id="home" hidden>
     <div class="flash" aria-hidden="true"></div>
+    <a class="card pop sky ilju-banner" href="#ilju"><span class="tag p">새 게임 · 살아남아라 60동물</span><b>띠는 태어난 해, 진짜 나는 태어난 날</b><span class="meta">생일 넣고 내 진짜 동물 찾기 · 무료 →</span></a>
     <section class="hero">
       <h1>생일만 넣으면 끝,<br><span class="mark">띠 동물 사진</span>으로 보는 사주</h1>
       <p>카메라로 찍는 게 아니에요. 생년월일만 넣으면<br>우리 띠 동물 사진과 풀이 편지가 와요.</p>
@@ -641,6 +647,20 @@ fieldset.b { background: linear-gradient(180deg, #f2f9ff, #e6f2ff); }
       <p class="err" id="uerr" role="alert" hidden></p>
       <div id="uwait" hidden></div>
     </form>
+  </div>
+
+  <!-- 살아남아라 60동물: 생일 → 태어난 날 동물(일주, 60가지). 계산은 이 브라우저 안에서만, 생일은 어디에도 보내지 않는다 -->
+  <div id="ilju" hidden>
+    <section class="card pop" data-shot="60동물">
+      <span class="tag p">무료 · 살아남아라 60동물</span>
+      <h2>내 진짜 동물 찾기</h2>
+      <p class="meta">띠는 태어난 해로 12가지, 진짜 '나'를 뜻하는 동물은 태어난 날로 60가지예요. 생년월일만 넣으면 바로 나와요.</p>
+      <div><label for="id8">생년월일 8자리(양력)</label><input type="text" inputmode="numeric" maxlength="8" pattern="[0-9]{8}" placeholder="19960302" title="숫자 8자리로 적어 주세요. 예: 19960302" autocomplete="off" id="id8"></div>
+      <button type="button" class="shutter" id="ishot"><i aria-hidden="true"></i>내 진짜 동물 보기</button>
+      <p class="err" id="ierr" role="alert" hidden></p>
+      <small>생일은 이 화면에서만 계산하고 어디에도 보내지 않아요. 밤 11시 넘어 태어났다면 다음 날 동물일 수도 있어요.</small>
+    </section>
+    <div class="tryout" id="iout" aria-live="polite"></div>
   </div>
 
   <div id="admin" hidden>
@@ -1114,11 +1134,78 @@ async function loadOrders() {
 $('aload').onclick = loadOrders;
 try { $('akey').value = sessionStorage.getItem('akey') || ''; } catch (e) {}
 
+// ---- 살아남아라 60동물: 태어난 날 간지(일주) → 색(날 천간의 오행) + 동물(날 지지). 서버 saju.mjs의 일주와 같은 식
+const ILJU_COLOR = ['푸른', '붉은', '노란', '하얀', '검은'];
+const ILJU_STEM = ['큰 나무처럼 곧고 앞장서는', '덩굴처럼 유연하고 다정한', '한낮 해처럼 밝고 시원시원한', '촛불처럼 따뜻하고 섬세한', '큰 산처럼 듬직하고 믿음직한',
+  '밭흙처럼 포근하고 잘 챙기는', '바위처럼 단단하고 당당한', '보석처럼 깔끔하고 예리한', '바다처럼 넓고 생각이 깊은', '이슬비처럼 조용하고 눈치 빠른'];
+const ILJU_ANIMAL = ['재빠른', '끈기 있는', '용감한', '사랑스러운', '꿈이 큰', '지혜로운', '자유로운', '순한', '재주 많은', '부지런한', '의리 있는', '복 많은'];
+const ILJU_ZOO = ['쥐', '소', '범', '토끼', '용', '뱀', '말', '양', '원숭이', '닭', '개', '돼지'];
+const iljuName = i => `${ILJU_COLOR[(i % 10) >> 1]} ${ILJU_ZOO[i % 12]}`;
+function iljuOf(d8) {   // '19960302' → 0~59, 날짜가 틀리면 -1
+  const m = /^(\d{4})(\d{2})(\d{2})$/.exec(d8), t = m ? Date.UTC(+m[1], m[2] - 1, +m[3]) : NaN, dt = new Date(t);
+  if (!m || +m[1] < 1900 || t > Date.now() || dt.getUTCMonth() !== m[2] - 1 || dt.getUTCDate() !== +m[3]) return -1;
+  const jdn = t / 864e5 + 2440588, s = (jdn + 9) % 10, b = (jdn + 1) % 12;
+  for (let i = 0; i < 60; i++) if (i % 10 === s && i % 12 === b) return i;
+}
+let ILJU_STATE = null;
+fetch('state.json', { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => { ILJU_STATE = j; }).catch(() => {});
+function iljuStatus(i) {
+  const s = ILJU_STATE, reel = s?.latest_reel || 'https://www.instagram.com/tti.shot/';
+  if (!s) return { text: '11월 19일(목) 밤 시작! 시작하면 이 동물 이름을 댓글에 적어 주세요', reel };
+  if (s.champion === i) return { text: '60동물의 왕이에요', reel };
+  const out = s.out.find(o => o.id === i);
+  if (out) return { text: `${out.day}일차에 탈락했어요 · 일요일 부활전에서 살릴 수 있어요`, reel };
+  const r = s.ranks.find(x => x.id === i), left = Math.max(0, Math.ceil((Date.parse(s.next_cutoff) - Date.now()) / 36e5));
+  return { text: `살아 있어요 · ${s.ranks.length}마리 중 ${r ? r.rank : '-'}위${left ? ` · 오늘 자정까지 ${left}시간` : ''}`, reel };
+}
+$('ishot').onclick = () => {
+  const d8 = $('id8').value.replace(/\D/g, ''), i = iljuOf(d8);
+  $('ierr').hidden = i >= 0;
+  if (i < 0) { $('ierr').textContent = '생년월일을 숫자 8자리로 넣어 주세요. 예: 19960302'; return; }
+  const name = iljuName(i), nb = name.replace(' ', ' '), st = iljuStatus(i);   // nb: 화면에서 '노란 / 개'로 끊기지 않게
+  flash();
+  $('iout').innerHTML = `<section class="card pop" style="text-align:center">${pola(`ilju/${i}.jpg`, `${name} 사진`, nb, 'develop quick', true)}
+    <h2>나의 진짜 동물은 ${nb}</h2><p>${ILJU_STEM[i % 10]}, ${ILJU_ANIMAL[i % 12]} ${nb}</p>
+    <p><span class="label">${esc(st.text)}</span></p>
+    <p class="meta">댓글에 <b>${name}</b>${(name.charCodeAt(name.length - 1) - 0xAC00) % 28 ? '이라고' : '라고'} 적으면 한 표예요. 색까지 꼭 적어 주세요.</p>
+    <a class="btn" href="${esc(st.reel)}" target="_blank" rel="noopener">댓글로 우리 동물 살리러 가기</a>
+    <div class="duo"><button type="button" class="ghost" id="ishare">친구 동물도 찾아 주기</button><button type="button" class="ghost" id="isave">스토리 사진 저장</button></div>
+    <a class="btn sky" href="#match" id="imatch">우리 둘 궁합도 보기</a><small>어린이는 엄마 아빠랑 같이 해요</small></section>`;
+  popAll($('iout'));
+  requestAnimationFrame(() => requestAnimationFrame(() => $('iout').querySelector('.develop').classList.add('go')));
+  $('iout').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  $('imatch').onclick = () => { $('ad').value = d8; };
+  $('ishare').onclick = async e => {
+    const url = location.origin + location.pathname + '?ilju=1';
+    try { if (navigator.share) return await navigator.share({ title: '내 진짜 동물 찾기', text: `나는 ${name}래. 너는?`, url }); } catch (x) { if (x.name === 'AbortError') return; }
+    navigator.clipboard?.writeText(url).then(() => { e.target.textContent = '링크를 복사했어요'; }, () => {});
+  };
+  $('isave').onclick = async e => {   // 스토리 크기 한 장: 사진 + 이름 + 아이디
+    e.target.disabled = true;
+    try {
+      const c = document.createElement('canvas'), g = c.getContext('2d'), img = Object.assign(new Image(), { src: `ilju/${i}.jpg` });
+      await img.decode(); await document.fonts.ready; c.width = 1080; c.height = 1920;
+      g.fillStyle = '#fff8ef'; g.fillRect(0, 0, 1080, 1920);
+      g.save(); g.translate(540, 820); g.rotate(-.03); g.shadowColor = 'rgba(120,80,60,.25)'; g.shadowBlur = 40; g.fillStyle = '#fff'; g.fillRect(-400, -420, 800, 900); g.restore();
+      g.save(); g.translate(540, 820); g.rotate(-.03); cover(g, img, -360, -380, 720, 720); g.restore();
+      g.textAlign = 'center'; g.fillStyle = '#ec8b69'; g.font = '56px Jua'; g.fillText('나의 진짜 동물은', 540, 260);
+      g.fillStyle = '#4b3b36'; g.font = '110px Jua'; g.fillText(name, 540, 1440);
+      g.font = '40px Jua'; g.fillStyle = '#8c7a73'; g.fillText('띠는 태어난 해, 진짜 나는 태어난 날', 540, 1530);
+      g.fillStyle = '#fff'; g.beginPath(); g.roundRect(170, 1700, 740, 96, 48); g.fill();
+      g.fillStyle = '#4b3b36'; g.font = '40px Jua'; g.fillText(`너도 찾아 봐 · ${BRAND} ${HANDLE}`, 540, 1763);
+      const inApp = /Instagram|FBAN|FBAV|KAKAOTALK|NAVER|Line\//i.test(navigator.userAgent);
+      showSaved(c.toDataURL('image/jpeg', .92), 'my-animal.jpg', inApp);
+    } finally { e.target.disabled = false; }
+  };
+};
+$('id8').onkeydown = e => { if (e.key === 'Enter') $('ishot').click(); };
+
 function route() {
+  if (!location.hash && new URLSearchParams(location.search).has('ilju')) history.replaceState(null, '', location.pathname + location.search + '#ilju');
   const h = location.hash, m = { '#match': 'match', '#family': 'family', '#bff': 'bff' }[h];
-  const view = h.startsWith('#k=') ? 'result' : m ? 'match' : ['#year', '#group', '#reunion', '#admin'].includes(h) ? h.slice(1) : 'home';
+  const view = h.startsWith('#k=') ? 'result' : m ? 'match' : ['#year', '#group', '#reunion', '#admin', '#ilju'].includes(h) ? h.slice(1) : 'home';
   if (m) setMode(m);
-  for (const v of ['home', 'match', 'year', 'group', 'reunion', 'admin', 'result']) $(v).hidden = v !== view;
+  for (const v of ['home', 'match', 'year', 'group', 'reunion', 'admin', 'result', 'ilju']) $(v).hidden = v !== view;
   scrollTo(0, 0);
   if (view === 'result') showResult(h.slice(3));
   // 미리 보기에서 넘어왔으면: 방금 본 사진을 신청서 위에 두고, 태어난 해를 미리 채운다(뒤 네 자리 월일만 적으면 된다)
